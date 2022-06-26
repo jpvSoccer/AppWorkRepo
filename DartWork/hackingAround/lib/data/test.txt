@@ -1,0 +1,2 @@
+animalId, NAME, DOB, GENDER, WEIGHT
+animalId, NAME, DOB, GENDER, WEIGHT
