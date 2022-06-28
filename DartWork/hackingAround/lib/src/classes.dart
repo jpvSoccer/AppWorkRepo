@@ -9,56 +9,83 @@ class MyFileParse {
 
   MyFileParse(this.file);
 
-  myExtractDataFromFile() {
-    List parsedList = [];
+  myReadDataFromFile() {
     print("Extracting data from file\n");
     List fileData = file.readAsLinesSync();
+    return fileData;
+  }
+
+  myExtractData(List fileData) {
+    List parsedList = [];
     // remove comment lines by building a new list without commented lines
+
     fileData.forEach((element) {
       if (!(element.contains("#", 0))) {
         parsedList.add(element);
       }
     });
-    print("raw data read from data file:\n$fileData \n\n");
-    print("the parsed list is:\n $parsedList\n");
-    int parsedListLength = parsedList.length;
-    print("we have data for $parsedListLength animals\n");
-    for (var i = 0; i < parsedListLength; i++) {
-      String testMe = parsedList[i];
-      print("animal record is: $testMe");
-      List parsedListElement$i = parsedList[i].split(" ");
-      for (var j = 0; j < parsedListElement$i.length; j++) {
-        print(
-          parsedListElement$i[j],
-        );
-      }
-    }
-    parsedList.forEach((element) {
-      //print(element);
-      List parsedListElement = element.split(" ");
-      String animalId = parsedListElement[0];
-      String animalName = parsedListElement[1];
-      String animalDob = parsedListElement[2];
-      String animalGender = parsedListElement[3];
-      String animalWeight = parsedListElement[4];
-      //print(animalId);
-    });
+    return parsedList;
+  }
 
-    //fileData.removeWhere((element) => false); not tested or used
+//    print("the parsed list is:\n $parsedList\n");
+//    int parsedListLength = parsedList.length;
+//    print("we have data for $parsedListLength animals\n");
+//    for (var i = 0; i < parsedListLength; i++) {
+//      String testMe = parsedList[i];
+//      print("animal record is: $testMe");
+//      List parsedListElement$i = parsedList[i].split(" ");
+//      for (var j = 0; j < parsedListElement$i.length; j++) {
+//        print(
+//          parsedListElement$i[j],
+//        );
+//      }
+//    }
+//    parsedList.forEach((element) {
+//      //print(element);
+//      List parsedListElement = element.split(" ");
+//      String animalId = parsedListElement[0];
+//      String animalName = parsedListElement[1];
+//      String animalDob = parsedListElement[2];
+//      String animalGender = parsedListElement[3];
+//      String animalWeight = parsedListElement[4];
+//      //print(animalId);
+//    });
 
-    // this is if we want to work with a string instead of a list
-    // String fileData = file.readAsStringSync();
-    //String parsedStringNoSpaces = fileData.replaceAll(' ', '');
-    //List parsedString = parsedStringNoSpaces.split(",");
-    //List parsedString = fileData.split(" ");
-    //print("parsed data read from data filei:\n$parsedString\n\n");
-    //parsedString.forEach(print);
-    //parsedString.forEach((element) => print(element));
+  //fileData.removeWhere((element) => false); not tested or used
 
-    //this is if we want to work with a non-blocking method
-    // this lets the program continue while file access is running
-    //Future<String> fileData = file.readAsString();
-    //fileData.then((c) => print(c));
+  // this is if we want to work with a string instead of a list
+  // String fileData = file.readAsStringSync();
+  //String parsedStringNoSpaces = fileData.replaceAll(' ', '');
+  //List parsedString = parsedStringNoSpaces.split(",");
+  //List parsedString = fileData.split(" ");
+  //print("parsed data read from data filei:\n$parsedString\n\n");
+  //parsedString.forEach(print);
+  //parsedString.forEach((element) => print(element));
+
+  //this is if we want to work with a non-blocking method
+  // this lets the program continue while file access is running
+  //Future<String> fileData = file.readAsString();
+  //fileData.then((c) => print(c));
+}
+
+class MyModifyOrReportData {
+  List dataList = [];
+  MyModifyOrReportData();
+
+  myReportEntry(List dataList) {
+    print("TODO: Report entry: $dataList ");
+  }
+
+  myAddEntry(List dataList) {
+    print("TODO: Adding entry: $dataList ");
+  }
+
+  myRemoveEntry(List dataList) {
+    print("TODO: Removing entry: $dataList ");
+  }
+
+  myChangeEntry(List dataList) {
+    print("TODO: Changing entry: $dataList ");
   }
 }
 
@@ -66,21 +93,12 @@ class MyFileInitialization {
   File file;
   MyFileInitialization(this.file);
 
-  printTestFilePath() {
-    print(file.path);
-  }
-
-  removeOldTestFile() {
-    print("JPV removing data file");
-    Process.runSync('rm', ['../data/test.txt']);
-  }
-
   myInitializeFile() {
     if (file.existsSync() == false) {
       print("\nAnimal data file does not exist; creating new data file\n");
       print("Adding commented header to data file\n");
       file.createSync();
-      file.writeAsStringSync("#Data file ussage\n", mode: FileMode.append);
+      file.writeAsStringSync("#Data file usage\n", mode: FileMode.append);
       file.writeAsStringSync("#first char # is comment line\n",
           mode: FileMode.append);
       file.writeAsStringSync("#here are the currently supported fields\n",
@@ -90,6 +108,15 @@ class MyFileInitialization {
     } else {
       print("Existing animal data file found\n");
     }
+  }
+
+  printTestFilePath() {
+    print("Animal data file is: $file");
+  }
+
+  removeOldTestFile() {
+    print("Removing data file");
+    Process.runSync('rm', ['../data/test.txt']);
   }
 }
 

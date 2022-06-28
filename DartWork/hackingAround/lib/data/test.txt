@@ -4,11 +4,3 @@
 #animalId NAME DOB GENDER WEIGHT
 animall000 goat0 05/1/1970 wether 10
 animall001 goat1 05/2/1970 wether 20
-animall002 goat2 05/3/1970 wether 30
-animall003 goat3 05/4/1970 wether 40
-animall004 goat4 05/5/1970 wether 50
-animall005 goat5 05/6/1970 wether 60
-animall006 goat6 05/7/1970 wether 70
-animall007 goat7 05/8/1970 wether 80
-animall008 goat8 05/9/1970 wether 90
-animall009 goat9 05/10/1970 wether 100
