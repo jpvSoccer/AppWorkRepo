@@ -12,27 +12,53 @@ class MyFileParse {
   myExtractDataFromFile() {
     List parsedList = [];
     print("Extracting data from file\n");
-    // String fileData = file.readAsStringSync();
     List fileData = file.readAsLinesSync();
-    // remove comment lines
+    // remove comment lines by building a new list without commented lines
     fileData.forEach((element) {
       if (!(element.contains("#", 0))) {
         parsedList.add(element);
       }
     });
-    print("data read from data file:\n$fileData \n\n");
-    //parsedList.remove(null);
-    print(parsedList);
+    print("raw data read from data file:\n$fileData \n\n");
+    print("the parsed list is:\n $parsedList\n");
+    int parsedListLength = parsedList.length;
+    print("we have data for $parsedListLength animals\n");
+    for (var i = 0; i < parsedListLength; i++) {
+      String testMe = parsedList[i];
+      print("animal record is: $testMe");
+      List parsedListElement$i = parsedList[i].split(" ");
+      for (var j = 0; j < parsedListElement$i.length; j++) {
+        print(
+          parsedListElement$i[j],
+        );
+      }
+    }
+    parsedList.forEach((element) {
+      //print(element);
+      List parsedListElement = element.split(" ");
+      String animalId = parsedListElement[0];
+      String animalName = parsedListElement[1];
+      String animalDob = parsedListElement[2];
+      String animalGender = parsedListElement[3];
+      String animalWeight = parsedListElement[4];
+      //print(animalId);
+    });
+
     //fileData.removeWhere((element) => false); not tested or used
 
+    // this is if we want to work with a string instead of a list
+    // String fileData = file.readAsStringSync();
     //String parsedStringNoSpaces = fileData.replaceAll(' ', '');
     //List parsedString = parsedStringNoSpaces.split(",");
-
     //List parsedString = fileData.split(" ");
     //print("parsed data read from data filei:\n$parsedString\n\n");
     //parsedString.forEach(print);
-
     //parsedString.forEach((element) => print(element));
+
+    //this is if we want to work with a non-blocking method
+    // this lets the program continue while file access is running
+    //Future<String> fileData = file.readAsString();
+    //fileData.then((c) => print(c));
   }
 }
 
@@ -68,6 +94,13 @@ class MyFileInitialization {
 }
 
 // a class using the named default constructor
+// making an instance of a class using default constructor
+//  var my_class_1 = new MyClass1();
+// making another instance
+//  var my_class_1_a = new MyClass1();
+// overloading and calling class method
+//  my_class_1_a.object_hello = "overloading instance variable";
+//  my_class_1_a.printStuff();
 class MyClass1 {
   String object_hello = "instantiated";
   // default constructor
@@ -81,6 +114,18 @@ class MyClass1 {
   }
 }
 
+// making an instance of a class with parameters in  constructor
+// parameters are nullable
+//  var my_class_2 = new MyClass2(7, "instantiated");
+//  my_class_2.printStuff();
+// overloading and calling class method
+//  my_class_2.myInt = 1000;
+//  my_class_2.printStuff();
+//  var my_class_2_a = new MyClass2(null, null);
+//  my_class_2_a.printStuff();
+//  my_class_2_a.myInt = 8;
+//  my_class_2_a.object_hello = "hi from main";
+//  my_class_2_a.printStuff();
 class MyClass2 {
   String? object_hello;
   int? myInt;
@@ -96,7 +141,11 @@ class MyClass2 {
   }
 }
 
-// using named parameters
+// try using named parameters
+// var my_class_3 = new MyClass3(object_hello: "testing named parameter");
+//  my_class_3.printStuff();
+//  my_class_3.myInt = 8;
+//  my_class_3.printStuff();
 class MyClass3 {
   String? object_hello;
   MyClass3({this.object_hello}) {
