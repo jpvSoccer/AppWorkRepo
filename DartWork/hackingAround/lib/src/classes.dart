@@ -72,8 +72,18 @@ class MyModifyOrReportData {
   List dataList = [];
   MyModifyOrReportData();
 
-  myReportEntry(List dataList) {
-    print("TODO: Report entry: $dataList ");
+  myReportAnimal(List dataList) {
+    print("\nANIMALID   NAME   DOB     GENDER   WEIGH");
+    String test = dataList.first;
+    print("First: $dataList.first");
+    print("\n\n");
+  }
+
+  myReportAllAnimals(List dataList) {
+    print("\nHere are the animals currently on record:");
+    print("ANIMALID   NAME   DOB     GENDER   WEIGHT");
+    dataList.forEach(print);
+    print("\n\n");
   }
 
   myAddEntry(List dataList) {

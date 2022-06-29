@@ -21,7 +21,8 @@ void main() {
   // remove coment lines; lines containing #)
   dataList = my_file_parse.myExtractData(fileData);
 
-  my_modify_or_report_data.myReportEntry(dataList);
+  my_modify_or_report_data.myReportAllAnimals(dataList);
+  my_modify_or_report_data.myReportAnimal(dataList);
   my_modify_or_report_data.myAddEntry(dataList);
   my_modify_or_report_data.myRemoveEntry(dataList);
   my_modify_or_report_data.myChangeEntry(dataList);
