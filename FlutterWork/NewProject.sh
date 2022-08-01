@@ -9,6 +9,7 @@
 
 # start up emulator
 #flutter emulators --launch Pixel_5_API_33
+# kill emulator by clicking on window x
 
 # create a list of sample flutter projects to select from
 #flutter create --list-samples TemplateSamples.json
