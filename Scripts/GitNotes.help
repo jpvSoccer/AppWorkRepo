@@ -1,0 +1,17 @@
+# jvogel frequently use git commands
+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
+
+#Cloning a repo
+# goto github, goto repo, goto code >> https > click copy icon
+# goto local folder
+git clone https://github.com/jpvSoccer/AppWorkRepo.git
+
+# see what differs from the head/main
+git status
+
+# add files for commit
+git commit
+
+# push local committed files up to github repo
+git push
+
