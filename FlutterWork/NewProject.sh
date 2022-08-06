@@ -62,14 +62,14 @@ export projName=educative_io_flutter_class
 export deviceName=Pixel_5_API_33 
 export deviceName=Linux 
 
-echo "New project directory: $dirName"
+echo "New project directory: dirName $dirName"
 echo "Project description:   $projectDescription"
-echo "Project Name:          $projName"
-echo "Organization:          $orgName"
-echo "Project type:          $templateName"
-echo "Example source:        $sampleName"
-echo "Target device:         $deviceName"
-#exit
+echo "Project Name:          projName $projName"
+echo "Organization:          orgName  $orgName"
+echo "Project type:          templateName $templateName"
+echo "Example source:        sampleName $sampleName"
+echo "Target device:         deviceName $deviceName"
+exit
 
 #create a new project from a sample
 #--verbose \
