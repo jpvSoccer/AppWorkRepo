@@ -1,0 +1,25 @@
+#jvogel
+#this is a backup of the localizations I have done to my environment
+
+alias gvim='vim -g'
+alias sc='. ~/.bashrc'
+alias vc='vi ~/.bashrc'
+alias va='vi ~/.bash_aliases'
+alias sa='. ~/.bash_aliases'
+alias catkey='cat ~/engineering/AppWorkRepo/GitHubAccessToken.dat'
+alias gorepo='cd ~/engineering/AppWorkRepo/;ls'
+
+export MY_UNIX_PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export FLUTTER_SCRIPTS=/home/jvogel/engineering/AppWorkRepo/Scripts
+export SDK_TOOLS=/home/jvogel/Android/Sdk/emulator
+export CMDTOOLS_HOME="/home/jvogel/Android/Sdk/cmdline-tools/latest/bin"
+export PATH="$MY_UNIX_PATH:$CMDTOOLS_HOME:$SDK_TOOLS:$FLUTTER_SCRIPTS"
+#export PATH="$PATH:$CMDTOOLS_HOME:$SDK_TOOLS:$FLUTTER_SCRIPTS"
+
+#alias RUNINTELLIJ="~/tools/idea-IC-221.5080.210/bin/idea.sh"
+#export JAVA_HOME="/home/jvogel/tools/jdk-18.0.1.1"
+#export PATH="$PATH:$JAVA_HOME/bin:~/tools/idea-IC-221.5080.210/bin"
+#ls $JAVA_HOME
+#export CMDTOOLS_HOME="/home/jvogel/tools/android_sdk/cmdline-tools/latest"
+#export PATH="$PATH:$CMDTOOLS_HOME/bin"
+
