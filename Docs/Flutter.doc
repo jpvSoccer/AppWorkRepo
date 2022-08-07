@@ -1,0 +1,6 @@
+# jvogel
+# flutter usage notes
+
+#turn off app debug banner
+return MaterialApp(
+          debugShowCheckedModeBanner: false,
