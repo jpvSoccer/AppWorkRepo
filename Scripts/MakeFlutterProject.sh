@@ -2,6 +2,8 @@
 #jvogel
 # interactively or batch make a new flutter project using StdIn
 
+cd ../work
+
 echo ""
 echo Usage: 
 echo MakeFlutterProject.sh -r batch
@@ -94,4 +96,6 @@ flutter create ./$dirName \
 
 cd $dirName
 flutter run -d $deviceName
+# creates executable:
+#build/linux/x64/debug/bundle/best_practices
 cd ..
