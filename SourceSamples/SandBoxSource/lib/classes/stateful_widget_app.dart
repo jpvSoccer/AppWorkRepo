@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import '../settings/constants.dart';
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class StatefulWidgetApp extends StatefulWidget {
+  const StatefulWidgetApp({Key? key}) : super(key: key);
 
   @override
   MyStateVar1 createState() => MyStateVar1();
 }
 
-class MyStateVar1 extends State<MyApp> {
+class MyStateVar1 extends State<StatefulWidgetApp> {
   MyStateVar1({Key? key});
+
+  String displayText = englishGreeting;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,10 @@ class MyStateVar1 extends State<MyApp> {
           ],
         ),
         body: Center(
-          child: Text(displayText),
+          child: Text(
+            displayText,
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          ),
         ),
       ),
     );

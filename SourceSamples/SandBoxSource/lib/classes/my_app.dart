@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import '../settings/constants.dart';
 
-class StatefulWidgetApp extends StatefulWidget {
-  const StatefulWidgetApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   MyStateVar1 createState() => MyStateVar1();
 }
 
-class MyStateVar1 extends State<StatefulWidgetApp> {
+class MyStateVar1 extends State<MyApp> {
   MyStateVar1({Key? key});
+
+  String displayText = englishGreeting;
 
   @override
   Widget build(BuildContext context) {
