@@ -10,6 +10,7 @@ echo MakeFlutterProject.sh -r batch
 echo MakeFlutterProject.sh -r interactive
 echo MakeFlutterProject.sh -r bestpractice
 echo MakeFlutterProject.sh -r basic
+echo MakeFlutterProject.sh -r sandbox
 echo ""
 
 while getopts r: flag
@@ -23,6 +24,9 @@ done
 export orgName=net.secondchancelearning
 export deviceName=Pixel_5_API_33 
 export deviceName=Linux 
+if  [ $OSTYPE = "darwin21" ] ; then
+export deviceName=macOS 
+fi
 
 if  [ $RunType = "batch" ] ; then
   echo "Running in batch"
@@ -54,6 +58,14 @@ elif [ $RunType = "basic" ]; then
   export templateName=app
   export dirName=counterSample
   export projName=counter_sample
+elif [ $RunType = "sandbox" ]; then
+  rm -rf sandbox
+  echo "Creating basic upcounter sample"
+  export projectDescription="jvogel sandbox"
+  export sampleName=material.Scaffold.1
+  export templateName=app
+  export dirName=sandbox
+  export projName=sandbox
 elif [ $RunType = "interactive" ]; then
   echo "Running interactive"
   read  -p "Protect folder: " replyVar
@@ -95,6 +107,11 @@ flutter create ./$dirName \
 --template $templateName
 
 cd $dirName
+if  [ $dirName = "sandbox" ] ; then
+rm -r lib
+cp -r ~/engineering/AppWorkRepo/SourceSamples/SandBoxSource/lib .
+fi
+
 flutter run -d $deviceName
 # creates executable:
 #build/linux/x64/debug/bundle/best_practices
