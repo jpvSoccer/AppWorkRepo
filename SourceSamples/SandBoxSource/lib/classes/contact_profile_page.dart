@@ -16,47 +16,102 @@ class ContactProfilePage extends StatelessWidget {
               color: Colors.black,
             ),
             actions: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.star_border),
-                color: Colors.black,
-                onPressed: () {
-                  print("Contact is Starred");
-                },
-              )
+              AddStarIcon(),
             ],
           ),
           body: ListView(
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  Container(
-                    width: double.infinity,
-                    height: 250,
-                    child: Image.network(
-                      "https://github.com/ptyagicodecamp/educative_flutter/raw/profile_1/assets/profile.jpg?raw=true",
-                      height: 250,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  AddPicContainerViaUrl(),
+                  AddNameContainer(),
                 ],
               ),
+              AddDivider(),
+              AddButtonsContainer(),
             ],
           ),
+        ));
+//see docs.flutter.dev >> Building macOS apps with Flutter
+// macOS limits app access to device features
+// by default you are not able to access the internet
 // to fix exception when trying to access image
 //to file sandbox/macos/Runner/DebugProfile.entitlements
 //<key>com.apple.security.network.client</key>
 //<true/>
-
-// empty container
-//          body: Container(
-//            color: Colors.blue,
-//          ),
-//                title: Text(
-//          appTitle,
-//          style: const TextStyle(fontSize: 15),
-//        ))));
-        ));
   }
+}
+
+Widget AddStarIcon() {
+  return IconButton(
+    icon: const Icon(Icons.star_border),
+    color: Colors.black,
+    onPressed: () {
+      print("Contact is Starred");
+    },
+  );
+}
+
+Widget AddDivider() {
+  return const Divider(
+    color: Colors.grey,
+  );
+}
+
+Widget AddButtonsContainer() {
+  return Container(
+    margin: const EdgeInsets.only(top: 8, bottom: 8),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        buildCallButton(),
+      ],
+    ),
+  );
+}
+
+Widget buildCallButton() {
+  return Column(
+    children: <Widget>[
+      IconButton(
+        icon: Icon(
+          Icons.call,
+          color: Colors.indigo.shade800,
+        ),
+        onPressed: () {},
+      ),
+    ],
+  );
+}
+
+Widget AddPicContainerViaUrl() {
+  return Container(
+    // ignore: sized_box_for_whitespace
+    width: double.infinity,
+    height: 250,
+    child: Image.network(
+      "https://github.com/ptyagicodecamp/educative_flutter/raw/profile_1/assets/profile.jpg?raw=true",
+      height: 250,
+      fit: BoxFit.cover,
+    ),
+  );
+}
+
+Widget AddNameContainer() {
+  return Container(
+    // ignore: sized_box_for_whitespace
+    height: 60,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: const <Widget>[
+        Padding(padding: EdgeInsets.all(8.0)),
+        Text(
+          "Priyanka Tyagi",
+          style: TextStyle(fontSize: 30),
+        ),
+      ],
+    ),
+  );
 }
 
 //class MyStateVar1 extends State<ContactProfilePage> {
