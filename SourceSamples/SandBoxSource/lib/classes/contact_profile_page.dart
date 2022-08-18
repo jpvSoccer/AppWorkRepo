@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../settings/constants.dart';
+//import '../settings/constants.dart';
 
 class ContactProfilePage extends StatelessWidget {
   const ContactProfilePage({Key? key}) : super(key: key);
@@ -16,33 +16,40 @@ class ContactProfilePage extends StatelessWidget {
               color: Colors.black,
             ),
             actions: <Widget>[
-              AddStarIcon(),
+              addStarIcon(),
             ],
           ),
           body: ListView(
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  AddPicContainerViaUrl(),
-                  AddNameContainer(),
+                  addPicContainerViaUrl(),
+                  addNameContainer(),
                 ],
               ),
-              AddDivider(),
-              AddButtonsContainer(),
+              addDivider(),
+              addButtonsContainer(),
+              addDivider(),
             ],
           ),
         ));
-//see docs.flutter.dev >> Building macOS apps with Flutter
-// macOS limits app access to device features
-// by default you are not able to access the internet
-// to fix exception when trying to access image
-//to file sandbox/macos/Runner/DebugProfile.entitlements
-//<key>com.apple.security.network.client</key>
-//<true/>
   }
 }
 
-Widget AddStarIcon() {
+Widget badAddAppBar() {
+  return AppBar(
+    backgroundColor: Colors.purple,
+    leading: const Icon(
+      Icons.arrow_back,
+      color: Colors.black,
+    ),
+    actions: <Widget>[
+      addStarIcon(),
+    ],
+  );
+}
+
+Widget addStarIcon() {
   return IconButton(
     icon: const Icon(Icons.star_border),
     color: Colors.black,
@@ -52,19 +59,24 @@ Widget AddStarIcon() {
   );
 }
 
-Widget AddDivider() {
+Widget addDivider() {
   return const Divider(
     color: Colors.grey,
   );
 }
 
-Widget AddButtonsContainer() {
+Widget addButtonsContainer() {
   return Container(
     margin: const EdgeInsets.only(top: 8, bottom: 8),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         buildCallButton(),
+        buildTextButton(),
+        buildVideoCallButton(),
+        buildEmailButton(),
+        buildDirectionsButton(),
+        buildPayButton(),
       ],
     ),
   );
@@ -80,12 +92,93 @@ Widget buildCallButton() {
         ),
         onPressed: () {},
       ),
+      const Text("Call"),
     ],
   );
 }
 
-Widget AddPicContainerViaUrl() {
+Widget buildTextButton() {
+  return Column(
+    children: <Widget>[
+      IconButton(
+        icon: Icon(
+          Icons.message,
+          color: Colors.indigo.shade800,
+        ),
+        onPressed: () {},
+      ),
+      const Text("Text"),
+    ],
+  );
+}
+
+Widget buildVideoCallButton() {
+  return Column(
+    children: <Widget>[
+      IconButton(
+        icon: Icon(
+          Icons.video_call,
+          color: Colors.indigo.shade800,
+        ),
+        onPressed: () {},
+      ),
+      const Text("Video"),
+    ],
+  );
+}
+
+Widget buildEmailButton() {
+  return Column(
+    children: <Widget>[
+      IconButton(
+        icon: Icon(
+          Icons.email,
+          color: Colors.indigo.shade800,
+        ),
+        onPressed: () {},
+      ),
+      const Text("Email"),
+    ],
+  );
+}
+
+Widget buildDirectionsButton() {
+  return Column(
+    children: <Widget>[
+      IconButton(
+        icon: Icon(
+          Icons.directions,
+          color: Colors.indigo.shade800,
+        ),
+        onPressed: () {},
+      ),
+      const Text("Directions"),
+    ],
+  );
+}
+
+Widget buildPayButton() {
+  return Column(
+    children: <Widget>[
+      IconButton(
+        icon: Icon(
+          Icons.attach_money,
+          color: Colors.indigo.shade800,
+        ),
+        onPressed: () {},
+      ),
+      const Text("Pay"),
+    ],
+  );
+}
+
+Widget addPicContainerViaUrl() {
   return Container(
+//access to the internet on macOS is controlled
+//file sandbox/macos/Runner/DebugProfile.entitlements
+// add to enable internet access
+//<key>com.apple.security.network.client</key>
+//<true/>
     // ignore: sized_box_for_whitespace
     width: double.infinity,
     height: 250,
@@ -97,7 +190,7 @@ Widget AddPicContainerViaUrl() {
   );
 }
 
-Widget AddNameContainer() {
+Widget addNameContainer() {
   return Container(
     // ignore: sized_box_for_whitespace
     height: 60,
@@ -155,3 +248,18 @@ Widget AddNameContainer() {
 //  }
 //}
 //
+
+// this sort of works, but i have not figured how to use it
+//          appBar: AddAppBar(),
+//class AddAppBar extends StatelessWidget implements PreferredSizeWidget {
+//  @override
+//  Size get preferredSize => const Size.fromHeight(50);
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    return Container(
+//      color: Colors.purple,
+//      child: Icon(Icons.arrow_back, color: Colors.black),
+//    );
+//  }
+//}
