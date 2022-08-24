@@ -1,5 +1,57 @@
 import 'package:flutter/material.dart';
 
+/// setDarkTheme returns a ThemeData type with the following attributes.
+///
+/// brightness
+/// appBarTheme
+/// iconTheme
+ThemeData setDarkTheme() {
+  return ThemeData(
+    brightness: Brightness.dark,
+    appBarTheme: const AppBarTheme(
+      color: Colors.white,
+      iconTheme: IconThemeData(color: Colors.blue),
+    ),
+    iconTheme: const IconThemeData(
+      color: Colors.indigo,
+    ),
+  );
+}
+
+/// setLightTheme returns a ThemeData type with the following attributes.
+///
+/// brightness
+/// appBarTheme
+/// iconTheme
+ThemeData setLightTheme() {
+  return ThemeData(
+    brightness: Brightness.light,
+    appBarTheme: const AppBarTheme(
+      color: Colors.white,
+      iconTheme: IconThemeData(color: Colors.blue),
+    ),
+    iconTheme: const IconThemeData(
+      color: Colors.indigo,
+    ),
+  );
+}
+
+PreferredSizeWidget buildAppBar() {
+  return AppBar(
+    leading: const Icon(
+      Icons.arrow_back_ios_new,
+    ),
+    actions: <Widget>[
+      IconButton(
+        icon: const Icon(Icons.star_border),
+        onPressed: () {
+          print("Contact is starred");
+        },
+      ),
+    ],
+  );
+}
+
 Widget addStarIcon() {
   return IconButton(
     icon: const Icon(Icons.star_border),
@@ -8,6 +60,43 @@ Widget addStarIcon() {
       print("Contact is Starred");
     },
   );
+}
+
+Widget buildScreen() {
+  return Scaffold(
+    appBar: buildAppBar(),
+    body: buildFirstScreen(),
+  );
+}
+
+Widget buildFirstScreen() {
+  return ListView(
+    children: <Widget>[
+      addMyPicture(),
+      addMyName(),
+      addDivider(),
+      addButtonsContainer(),
+      addDivider(),
+      mobilePhoneListTile(),
+      otherPhoneListTile(),
+      addDivider(),
+      emailListTile(),
+      addDivider(),
+      addressListTile(),
+    ],
+  );
+}
+
+Widget addMyPicture() {
+  return Column(children: <Widget>[
+    addPicContainerViaUrl(),
+  ]);
+}
+
+Widget addMyName() {
+  return Column(children: <Widget>[
+    addNameContainer(),
+  ]);
 }
 
 Widget addPicContainerViaUrl() {
@@ -22,7 +111,7 @@ Widget addPicContainerViaUrl() {
     height: 250,
     child: Image.network(
       "https://github.com/ptyagicodecamp/educative_flutter/raw/profile_1/assets/profile.jpg?raw=true",
-      height: 250,
+      //height: 400,
       fit: BoxFit.cover,
     ),
   );
@@ -45,26 +134,43 @@ Widget addNameContainer() {
   );
 }
 
+/// addDivider is a function that creates a grey dividing line on the UI
 Widget addDivider() {
   return const Divider(
     color: Colors.grey,
   );
 }
 
+/// create the container for the action buttons
+///
+/// create a local theme for the actions container
+///
+/// overide the local theme for the Pay button
+///
+/// add the action buttons to the container
 Widget addButtonsContainer() {
   return Container(
     margin: const EdgeInsets.only(top: 8, bottom: 8),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        buildCallButton(),
-        buildTextButton(),
-        buildVideoCallButton(),
-        buildEmailButton(),
-        buildDirectionsButton(),
-        buildPayButton(),
-      ],
+    child: Theme(
+      data: ThemeData(
+        iconTheme: const IconThemeData(color: Colors.pink),
+      ),
+      child: profileActonItems(),
     ),
+  );
+}
+
+Widget profileActonItems() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: <Widget>[
+      buildCallButton(),
+      buildTextButton(),
+      buildVideoCallButton(),
+      buildEmailButton(),
+      buildDirectionsButton(),
+      buildPayButton(),
+    ],
   );
 }
 
@@ -72,9 +178,9 @@ Widget buildCallButton() {
   return Column(
     children: <Widget>[
       IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.call,
-          color: Colors.indigo.shade800,
+          //color: Colors.indigo.shade800,
         ),
         onPressed: () {},
       ),
@@ -87,9 +193,9 @@ Widget buildTextButton() {
   return Column(
     children: <Widget>[
       IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.message,
-          color: Colors.indigo.shade800,
+          //color: Colors.indigo.shade800,
         ),
         onPressed: () {},
       ),
@@ -102,9 +208,9 @@ Widget buildVideoCallButton() {
   return Column(
     children: <Widget>[
       IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.video_call,
-          color: Colors.indigo.shade800,
+          //color: Colors.indigo.shade800,
         ),
         onPressed: () {},
       ),
@@ -117,9 +223,9 @@ Widget buildEmailButton() {
   return Column(
     children: <Widget>[
       IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.email,
-          color: Colors.indigo.shade800,
+          //color: Colors.indigo.shade800,
         ),
         onPressed: () {},
       ),
@@ -132,9 +238,9 @@ Widget buildDirectionsButton() {
   return Column(
     children: <Widget>[
       IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.directions,
-          color: Colors.indigo.shade800,
+          //color: Colors.indigo.shade800,
         ),
         onPressed: () {},
       ),
@@ -147,9 +253,9 @@ Widget buildPayButton() {
   return Column(
     children: <Widget>[
       IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.attach_money,
-          color: Colors.indigo.shade800,
+          color: Colors.greenAccent,
         ),
         onPressed: () {},
       ),
