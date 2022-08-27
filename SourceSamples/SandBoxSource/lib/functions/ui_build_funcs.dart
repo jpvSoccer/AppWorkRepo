@@ -1,66 +1,5 @@
 import 'package:flutter/material.dart';
-
-/// setDarkTheme returns a ThemeData type with the following attributes.
-///
-/// brightness
-/// appBarTheme
-/// iconTheme
-ThemeData setDarkTheme() {
-  return ThemeData(
-    brightness: Brightness.dark,
-    appBarTheme: const AppBarTheme(
-      color: Colors.white,
-      iconTheme: IconThemeData(color: Colors.blue),
-    ),
-    iconTheme: const IconThemeData(
-      color: Colors.indigo,
-    ),
-  );
-}
-
-/// setLightTheme returns a ThemeData type with the following attributes.
-///
-/// brightness
-/// appBarTheme
-/// iconTheme
-ThemeData setLightTheme() {
-  return ThemeData(
-    brightness: Brightness.light,
-    appBarTheme: const AppBarTheme(
-      color: Colors.white,
-      iconTheme: IconThemeData(color: Colors.blue),
-    ),
-    iconTheme: const IconThemeData(
-      color: Colors.indigo,
-    ),
-  );
-}
-
-PreferredSizeWidget buildAppBar() {
-  return AppBar(
-    leading: const Icon(
-      Icons.arrow_back_ios_new,
-    ),
-    actions: <Widget>[
-      IconButton(
-        icon: const Icon(Icons.star_border),
-        onPressed: () {
-          print("Contact is starred");
-        },
-      ),
-    ],
-  );
-}
-
-Widget addStarIcon() {
-  return IconButton(
-    icon: const Icon(Icons.star_border),
-    color: Colors.black,
-    onPressed: () {
-      print("Contact is Starred");
-    },
-  );
-}
+import '../functions/ui_build_appbar_funcs.dart';
 
 Widget buildScreen() {
   return Scaffold(
@@ -108,11 +47,11 @@ Widget addPicContainerViaUrl() {
 //<true/>
     // ignore: sized_box_for_whitespace
     width: double.infinity,
-    height: 250,
+    //height: 250,
     child: Image.network(
       "https://github.com/ptyagicodecamp/educative_flutter/raw/profile_1/assets/profile.jpg?raw=true",
-      //height: 400,
-      fit: BoxFit.cover,
+      height: 500,
+      fit: BoxFit.fitHeight,
     ),
   );
 }
