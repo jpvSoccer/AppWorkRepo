@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../functions/ui_build_funcs.dart';
-import '../functions/ui_theme_funcs.dart';
-import '../functions/ui_appbar_funcs.dart';
+import '../classes/ui_build.dart';
+import '../classes/ui_themes.dart';
 
 class ContactProfilePage extends StatelessWidget {
   const ContactProfilePage({Key? key}) : super(key: key);
@@ -10,8 +9,8 @@ class ContactProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: setLightTheme(),
-        home: buildScreen());
+        theme: UiAppThemes.setLightTheme(),
+        home: UiBuildMethods.buildScreen());
   }
 }
 
