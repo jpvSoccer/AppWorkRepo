@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../functions/ui_build_appbar_funcs.dart';
+import '../functions/ui_appbar_funcs.dart';
 
 Widget buildScreen() {
   return Scaffold(

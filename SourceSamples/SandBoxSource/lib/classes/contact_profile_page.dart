@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../functions/ui_build_funcs.dart';
 import '../functions/ui_theme_funcs.dart';
-import '../functions/ui_build_appbar_funcs.dart';
+import '../functions/ui_appbar_funcs.dart';
 
 class ContactProfilePage extends StatelessWidget {
   const ContactProfilePage({Key? key}) : super(key: key);
