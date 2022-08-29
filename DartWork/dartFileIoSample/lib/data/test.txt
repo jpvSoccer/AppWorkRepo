@@ -1,6 +1,0 @@
-#Data file ussage
-#first char # is comment line
-#here are the currently supported fields
-#animalId NAME DOB GENDER WEIGHT
-animall000 goat0 05/1/1970 wether 10
-animall001 goat1 05/2/1970 wether 20
