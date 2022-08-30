@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 //JPV need to have methods defined as static, since
 // i am not instantiating this class
 
+/// returns a ThemeData type
+///
+/// setDarkTheme and setLightTheme are methods to customize the APP theme
 class UiAppThemes {
   /// setDarkTheme returns a ThemeData type with the following attributes.
   ///

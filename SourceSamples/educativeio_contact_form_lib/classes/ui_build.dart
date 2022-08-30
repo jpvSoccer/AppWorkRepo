@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import '../classes/ui_helper_methods.dart';
 
-class UiBuildMethods {
+/// This class builds the whole first screen
+///
+class UiBuild {
+  /// method buildScreen returns a Scafold Widget to be used
+  /// as the appBar and home attributes of the MaterialApp
+  ///
   static buildScreen() {
     return Scaffold(
       appBar: buildAppBar(),
@@ -9,11 +14,7 @@ class UiBuildMethods {
     );
   }
 
-//Methods
-
-  /// buildAppBar is a PreferredSizeWidget
-  ///
-  /// that adds the App Bar with the following characteristics:
+  /// adds the App Bar with the following characteristics:
   ///
   /// a leading back arrow
   /// and an action IconButton

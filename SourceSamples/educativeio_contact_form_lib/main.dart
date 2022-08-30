@@ -16,5 +16,5 @@ import 'package:flutter/material.dart';
 //void main() => runApp(MyTwoScreensHomePage());
 
 import 'classes/contact_profile_page.dart';
-void main() => runApp(ContactProfilePage());
 
+void main() => runApp(const ContactProfilePage());
