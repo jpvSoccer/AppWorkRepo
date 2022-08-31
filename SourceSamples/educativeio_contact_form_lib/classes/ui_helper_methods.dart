@@ -71,12 +71,12 @@ class UiHelperMethods {
   static Widget addButtonsContainer() {
     return Container(
       margin: const EdgeInsets.only(top: 8, bottom: 8),
-      child: Theme(
-        data: ThemeData(
-          iconTheme: const IconThemeData(color: Colors.pink),
-        ),
-        child: profileActonItems(),
-      ),
+      child: profileActonItems(),
+      //child: Theme(
+      //  data: ThemeData(
+      //    iconTheme: const IconThemeData(color: Colors.pink),
+      //  ),
+      // ),
     );
   }
 
@@ -137,7 +137,7 @@ class UiHelperMethods {
         IconButton(
           icon: const Icon(
             Icons.video_call,
-            //color: Colors.indigo.shade800,
+            color: Colors.lightBlueAccent,
           ),
           onPressed: () {},
         ),
@@ -153,7 +153,7 @@ class UiHelperMethods {
         IconButton(
           icon: const Icon(
             Icons.email,
-            //color: Colors.indigo.shade800,
+            color: Colors.red,
           ),
           onPressed: () {},
         ),
@@ -169,7 +169,7 @@ class UiHelperMethods {
         IconButton(
           icon: const Icon(
             Icons.directions,
-            //color: Colors.indigo.shade800,
+            color: Colors.blue,
           ),
           onPressed: () {},
         ),
@@ -202,7 +202,7 @@ class UiHelperMethods {
       subtitle: const Text("mobile"),
       trailing: IconButton(
         icon: const Icon(Icons.message),
-        color: Colors.indigo.shade500,
+        //color: Colors.indigo.shade500,
         onPressed: () {},
       ),
     );
@@ -211,12 +211,12 @@ class UiHelperMethods {
   /// returns a ListTile widget with the other phone number
   static Widget otherPhoneListTile() {
     return ListTile(
-      leading: Text(""),
+      leading: const Text(""),
       title: const Text("440-440-3390"),
       subtitle: const Text("other"),
       trailing: IconButton(
         icon: const Icon(Icons.message),
-        color: Colors.indigo.shade500,
+        //color: Colors.indigo.shade500,
         onPressed: () {},
       ),
     );
@@ -234,12 +234,12 @@ class UiHelperMethods {
   /// returns a ListTile widget with the home address
   static Widget addressListTile() {
     return ListTile(
-      leading: Icon(Icons.location_on),
+      leading: const Icon(Icons.location_on),
       title: const Text("234 Sunset St, Burlingame"),
       subtitle: const Text("home"),
       trailing: IconButton(
         icon: const Icon(Icons.directions),
-        color: Colors.indigo.shade500,
+        //color: Colors.indigo.shade500,
         onPressed: () {},
       ),
     );

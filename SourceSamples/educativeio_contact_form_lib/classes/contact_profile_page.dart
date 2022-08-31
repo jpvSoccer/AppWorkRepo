@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import '../classes/ui_build.dart';
 import '../classes/ui_themes.dart';
@@ -12,9 +14,11 @@ class ContactProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log('JPV building Material APP', name: 'ContactProfilePage');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: UiAppThemes.setLightTheme(),
+      //theme: UiAppThemes.setDarkTheme(),
       home: UiBuild.buildScreen(),
     );
   }

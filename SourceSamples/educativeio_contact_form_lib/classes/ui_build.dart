@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import '../classes/ui_helper_methods.dart';
 
@@ -8,6 +10,7 @@ class UiBuild {
   /// as the appBar and home attributes of the MaterialApp
   ///
   static buildScreen() {
+    log('JPV building main Scafold', name: 'UiBuild');
     return Scaffold(
       appBar: buildAppBar(),
       body: buildFirstScreen(),
@@ -19,6 +22,7 @@ class UiBuild {
   /// a leading back arrow
   /// and an action IconButton
   static PreferredSizeWidget buildAppBar() {
+    log('JPV building appBar', name: 'buildAppBar');
     return AppBar(
       leading: const Icon(
         Icons.arrow_back_ios_new,
@@ -27,7 +31,7 @@ class UiBuild {
         IconButton(
           icon: const Icon(Icons.star_border),
           onPressed: () {
-            print("Contact is starred");
+            log('JPV Contact is starred', name: 'buildAppBar');
           },
         ),
       ],
