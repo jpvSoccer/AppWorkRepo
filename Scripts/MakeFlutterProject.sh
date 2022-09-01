@@ -109,7 +109,10 @@ flutter create ./$dirName \
 cd $dirName
 if  [ $dirName = "sandbox" ] ; then
 rm -r lib
-cp -r ~/engineering/AppWorkRepo/SourceSamples/SandBoxSource/lib .
+echo "JPV: Linking in source file lib"
+ln -s ~/engineering/AppWorkRepo/SourceSamples/educativeio_contact_form_lib lib
+echo "JPV: Replacing entitlements file to add client interness access"
+cp lib/sandbox_macos_Runner_DebugProfile.entitlements macos/Runner/DebugProfile.entitlements
 fi
 
 flutter run -d $deviceName
