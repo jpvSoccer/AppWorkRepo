@@ -10,7 +10,6 @@ echo MakeFlutterProject.sh -r batch
 echo MakeFlutterProject.sh -r interactive
 echo MakeFlutterProject.sh -r bestpractice
 echo MakeFlutterProject.sh -r basic
-echo MakeFlutterProject.sh -r sandbox
 echo ""
 
 while getopts r: flag
@@ -58,14 +57,6 @@ elif [ $RunType = "basic" ]; then
   export templateName=app
   export dirName=counterSample
   export projName=counter_sample
-elif [ $RunType = "sandbox" ]; then
-  rm -rf sandbox
-  echo "Creating basic upcounter sample"
-  export projectDescription="jvogel sandbox"
-  export sampleName=material.Scaffold.1
-  export templateName=app
-  export dirName=sandbox
-  export projName=sandbox
 elif [ $RunType = "interactive" ]; then
   echo "Running interactive"
   read  -p "Protect folder: " replyVar
@@ -107,13 +98,6 @@ flutter create ./$dirName \
 --template $templateName
 
 cd $dirName
-if  [ $dirName = "sandbox" ] ; then
-rm -r lib
-echo "JPV: Linking in source file lib"
-ln -s ~/engineering/AppWorkRepo/SourceSamples/educativeio_contact_form_lib lib
-echo "JPV: Replacing entitlements file to add client interness access"
-cp lib/sandbox_macos_Runner_DebugProfile.entitlements macos/Runner/DebugProfile.entitlements
-fi
 
 flutter run -d $deviceName
 # creates executable:
