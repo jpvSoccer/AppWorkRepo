@@ -1,0 +1,10 @@
+git add ../../../educativeio_contact_form_lib/Mypubspec_withassets.yaml
+git add ../../../educativeio_contact_form_lib/assets/sleeping_goats_small.png
+git add ../../../educativeio_contact_form_lib/classes/contact_profile_page.dart
+git add ../../../educativeio_contact_form_lib/classes/ui_build.dart
+git add ../../../educativeio_contact_form_lib/classes/ui_helper_methods.dart
+git add ../../../educativeio_contact_form_lib/classes/ui_themes.dart
+git add ../../../educativeio_contact_form_lib/main.dart
+git add ../../../educativeio_contact_form_lib/sandbox_macos_Runner_DebugProfile.entitlements
+git add ../../../educativeio_contact_form_lib/settings/constants.dart
+
