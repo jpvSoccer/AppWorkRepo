@@ -25,15 +25,16 @@ class UiHelperMethods {
 // add to enable internet access
 //<key>com.apple.security.network.client</key>
 //<true/>
-      // ignore: sized_box_for_whitespace
-      width: double.infinity,
-      //height: 250,
+        // ignore: sized_box_for_whitespace
+        width: double.infinity,
+        //height: 250,
+//        child: Image.asset('assets/sleeping_goats_small.png')
       child: Image.network(
         "https://github.com/ptyagicodecamp/educative_flutter/raw/profile_1/assets/profile.jpg?raw=true",
         height: 500,
         fit: BoxFit.fitHeight,
       ),
-    );
+        );
   }
 
   /// returns a Container widget that holds the contact name
