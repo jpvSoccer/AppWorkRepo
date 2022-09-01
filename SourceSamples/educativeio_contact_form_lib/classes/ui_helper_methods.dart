@@ -6,7 +6,8 @@ class UiHelperMethods {
   ///returns a Column widget of a container that holds the contact picture
   static addMyPicture() {
     return Column(children: <Widget>[
-      addPicContainerViaUrl(),
+      //addPicContainerViaUrl(),
+      addPicContainerViaAsset(),
     ]);
   }
 
@@ -17,7 +18,23 @@ class UiHelperMethods {
     ]);
   }
 
-  /// returns a Container widget that holds the contact picture
+  /// returns a Container widget that holds the contact picture from local assets
+  static Widget addPicContainerViaAsset() {
+    return Container(
+      // ignore: sized_box_for_whitespace
+      //width: double.infinity,
+      //height: 250,
+      //TODO try to understand how images are fit to sides
+      child: Image.asset(
+        'assets/sleeping_goats_small.png',
+        //height: 100,
+        //width: 300,
+        fit: BoxFit.fill,
+      ),
+    );
+  }
+
+  /// returns a Container widget that holds the contact picture from the internet
   static Widget addPicContainerViaUrl() {
     return Container(
 //access to the internet on macOS is controlled
@@ -25,16 +42,15 @@ class UiHelperMethods {
 // add to enable internet access
 //<key>com.apple.security.network.client</key>
 //<true/>
-        // ignore: sized_box_for_whitespace
-        width: double.infinity,
-        //height: 250,
-//        child: Image.asset('assets/sleeping_goats_small.png')
+      // ignore: sized_box_for_whitespace
+      width: double.infinity,
+      //height: 250,
       child: Image.network(
         "https://github.com/ptyagicodecamp/educative_flutter/raw/profile_1/assets/profile.jpg?raw=true",
         height: 500,
         fit: BoxFit.fitHeight,
       ),
-        );
+    );
   }
 
   /// returns a Container widget that holds the contact name
@@ -124,6 +140,7 @@ class UiHelperMethods {
             Icons.message,
             //color: Colors.indigo.shade800,
           ),
+          tooltip: "Click to send a text message",
           onPressed: () {},
         ),
         const Text("Text"),
@@ -140,6 +157,7 @@ class UiHelperMethods {
             Icons.video_call,
             color: Colors.lightBlueAccent,
           ),
+          tooltip: "Click to make a video call",
           onPressed: () {},
         ),
         const Text("Video"),
