@@ -32,6 +32,10 @@ class UiAppThemes {
         buttonColor: Colors.orange,
       ),
       typography: setTargetPlatform(),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+      ),
     );
   }
 
@@ -58,6 +62,10 @@ class UiAppThemes {
       ),
       //colorScheme: const ColorScheme.light(), //TODO stop here
       typography: setTargetPlatform(),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+      ),
     );
   }
 

@@ -17,4 +17,4 @@ import 'package:flutter/material.dart';
 
 import 'classes/contact_profile_page.dart';
 
-void main() => runApp(const ContactProfilePage());
+void main() => runApp(ContactProfilePage());

@@ -9,13 +9,17 @@ class UiBuild {
   /// method buildScreen returns a Scafold Widget to be used
   /// as the appBar and home attributes of the MaterialApp
   ///
-  static buildScreen() {
-    log('JPV building main Scafold', name: 'UiBuild');
-    return Scaffold(
-      appBar: buildAppBar(),
-      body: buildFirstScreen(),
-    );
-  }
+  // JPV this is broken when we moved to a stateful widget
+//  static buildScreen() {
+//    log('JPV building main Scafold', name: 'UiBuild');
+//    return Scaffold(
+//      appBar: buildAppBar(),
+//      body: buildFirstScreen(),
+//        ),
+//
+//      ),
+//    );
+//  }
 
   /// adds the App Bar with the following characteristics:
   ///
