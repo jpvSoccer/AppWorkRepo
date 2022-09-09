@@ -45,12 +45,12 @@ cd $dirName
 if  [ $dirName = "educative_contact_form" ] ; then
 rm -r lib
 echo "JPV: Linking in source file lib"
-ln -s ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/lib lib
+ln -s ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/contactFormExample/lib lib
 echo "JPV: Replacing entitlements file to add client internet access"
-cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/DebugProfile.entitlements macos/Runner/DebugProfile.entitlements
+cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/contactFormExample/DebugProfile.entitlements macos/Runner/DebugProfile.entitlements
 echo "JPV: adding local assets"
-cp -r ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/assets .
-cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/pubspec.yaml .
+cp -r ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/contactFormExample/assets .
+cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/contactFormExample/pubspec.yaml .
 fi
 
 flutter run -d $deviceName
