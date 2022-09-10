@@ -61,7 +61,7 @@ rm -r lib
 echo "JPV: Linking in source file lib"
 ln -s ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/lib lib
 echo "JPV: Replacing entitlements file to add client internet access"
-###cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/DebugProfile.entitlements macos/Runner/DebugProfile.entitlements
+cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/DebugProfile.entitlements macos/Runner/DebugProfile.entitlements
 echo "JPV: adding local assets"
 ###cp -r ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/assets .
 ###cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/pubspec.yaml .
