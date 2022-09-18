@@ -1,3 +1,8 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe
+
+// this does not seem to work; i had to run flutter run --no-sound-null-safety
+// to get past the unsound-null-safety issue when i linked in the older http package
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -12,6 +17,7 @@ class MoviesProvider {
 //    "http://api.themoviedb.org/3/discover/movie?api_key=$apiKey&sort_by=primary_release_year=2014";
 //        "http://api.themoviedb.org/3/discover/movie?primary_release_year=2010&api_key=$apiKey&sort_by=vote_average.desc=2014";
     final apiResponse = await http.get(Uri.parse(apiEndPoint));
+    //final apiResponse = await http.get(apiEndPoint);  //this worked in the older version of http but not the new one
     return json.decode(apiResponse.body);
   }
 }

@@ -16,7 +16,7 @@ class _MoviesListingState extends State<MoviesListing> {
 
 //  dynamic movies;
 
-  fetchMovies() async {
+  fetchMoviesData() async {
     var data = await MoviesProvider.getJson();
     setState(() {
       List<dynamic> results = data['results'];
@@ -24,12 +24,18 @@ class _MoviesListingState extends State<MoviesListing> {
         movies.add(MovieModel.fromJson(element));
       });
 //      movies = data['results'];
+//
+// convert list to jason
+//List<String> names = ["John", "Krisna", "Rahul", "Maichel"];
+//String jsonstring = json.encode(names);
+//print(jsonstring);
+//output: ["John","Krisna","Rahul","Maichel"]
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    fetchMovies();
+    fetchMoviesData();
     return Scaffold(
       body: ListView.builder(
 // this gives a lint error about movies can never be null so stmt always false
