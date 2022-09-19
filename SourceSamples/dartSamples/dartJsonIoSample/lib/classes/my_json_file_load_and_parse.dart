@@ -8,9 +8,12 @@ class MyJsonFileLoadAndParse {
   myReadJsonFromFile() {
     print("Extracting data from file\n");
     List fileData = jsonFile.readAsLinesSync();
+    print("list length: ${fileData.length}");
+    fileData.forEach((element) => print(element));
     return fileData;
   }
 
+  // needs to be expanded to support jason
   myExtractJsonData(List fileData) {
     List parsedList = [];
     // remove comment lines by building a new list without commented lines
