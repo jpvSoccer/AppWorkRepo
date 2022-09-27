@@ -1,0 +1,35 @@
+{
+ "version": "0.0.1",
+ "herd1": [
+  {
+   "id": 0,
+   "name": "moma",
+   "dob": "3/1/2015",
+   "weight": "75",
+   "notes": "mother of all mininubians, flock queen"
+  },
+  {
+   "id": 1,
+   "name": "bigboy",
+   "dob": "4/1/2018",
+   "weight": "150",
+   "notes": "sire niko nubian, doe moma, wether, Top Buck"
+  }
+ ],
+ "herd2": [
+  {
+   "id": 0,
+   "name": "sally",
+   "dob": "3/1/2020",
+   "weight": "50",
+   "notes": "mother of all mininubians, flock queen"
+  },
+  {
+   "id": 1,
+   "name": "fatboy",
+   "dob": "4/1/2022",
+   "weight": "30",
+   "notes": "sire niko nubian, doe moma, wether, Top Buck"
+  }
+ ]
+}
