@@ -1,64 +1,70 @@
 import 'dart:io';
 import 'dart:convert';
 
-const String FILEPATH = "herd.json";
-const JsonDecoder decoder = JsonDecoder();
+const String HERDJSONFILE = "herd.json";
 
 class GOAT {
   int? id;
   String? name;
   String? dob;
   String? weight;
+  String? vaccines;
   String? notes;
 
   //{ } - implies named arguments
-  GOAT({this.id, this.name, this.dob, this.weight, this.notes});
+  GOAT({this.id, this.name, this.dob, this.weight, this.vaccines, this.notes});
 
   @override
   String toString() {
-    return "{id:$id,name:$name,dob:$dob,this:$weight,this:$notes}";
+    return "{id:$id,name:$name,dob:$dob,this:$weight,this:$vaccines,this:$notes}";
   }
 }
 
 void main() {
-  List<GOAT>? extractedMap;
-  //synchronously read file contents
-  var jsonString = File(FILEPATH).readAsStringSync();
-  //pass the read string to JsonDecoder class to convert into corresponding Objects
-  final Map<String, dynamic> jsonmap = jsonDecode(jsonString);
-  //final Map<String, dynamic> jsonmap = decoder.convert(jsonString);
+  List<GOAT>? extractedGoats;
+  //read file contents
+  var herdFileString = File(HERDJSONFILE).readAsStringSync();
+  //print("\njson string from file read ${herdFileString}\n");
+  //pass the read string to JsonDecoder
+  final Map<String, dynamic> jsonmap = jsonDecode(herdFileString);
+  //print("\nall maps after decoding herd file string ${jsonmap}\n");
 
-  print("\nread string length ${jsonString.length}");
-  print("\nread string ${jsonString}");
+  //print("\nread string length ${jsonString.length}");
+  //print("\nread string ${jsonString}");
 
-  print("\nmap ${jsonmap}");
-  print("\nmap length ${jsonmap.length}");
-  print("\map nentries ${jsonmap.entries}");
-  print("\nmap keys ${jsonmap.keys}");
-  print("\nmap keys first ${jsonmap.keys.first}");
-  print("\nmap values ${jsonmap.values}");
-  print("\nmap values first ${jsonmap.values.first}");
+  //print("\nmap length ${jsonmap.length}\n");
+  //print("\map entries ${jsonmap.entries}\n");
+  print("\nherd map keys ${jsonmap.keys}\n");
+  //print("\nherd map keys first ${jsonmap.keys.first}\n");
+  //print("\herd nmap values ${jsonmap.values}\n");
+  //print("\herd nmap values first ${jsonmap.values.first}\n");
 
   //DataModel - key = "herd1", value = "ARRAY of Objects"
-  var value = jsonmap["herd1"];
-  print("\nvalue json map\n ${value}");
-  if (value != null) {
-    extractedMap = <GOAT>[];
+  String herdToExtract = "herd2";
+  print("\nextracting herd: ${herdToExtract}\n");
+  var herdValues = jsonmap[herdToExtract];
+  //print("\nherd1 maps pulled from jsonmap ${herdValues}\n");
+  if (herdValues != null) {
+    extractedGoats = <GOAT>[];
     //Each item in value is of type::: _InternalLinkedHashMap<String, dynamic>
-    value.forEach((item) {
-      extractedMap?.add(new GOAT(
+    herdValues.forEach((item) {
+      extractedGoats?.add(new GOAT(
         id: item["id"],
         name: item["name"],
         dob: item["dob"],
         weight: item["weight"],
+        vaccines: item["vaccines"],
         notes: item["notes"],
       ));
-      print("\nitem ${item}");
+      //print("Goat Info: ${item}");
     });
   }
-  extractedMap?.forEach((element) => print(element));
-  print("\nextractedMap ${extractedMap}");
-  print("\nextractedMap length ${extractedMap?.length}");
-  print("\nMap 0 ${extractedMap?[0]}");
-  print("\nMap 1 ${extractedMap?[1]}");
+  //extractedGoats?.forEach((element) => print(element));
+  //print("\nextractedGoats ${extractedGoats}");
+  print("\nextracted ${extractedGoats?.length} goats");
+  //print("\nMap 0 Goat 0 ${extractedGoats?[0]}\n");
+  //print("\nMap 1 Goat 1 ${extractedGoats?[1]}\n");
+  extractedGoats?.forEach((item) {
+    print("Goat Info: ${item}");
+  });
 }
