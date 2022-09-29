@@ -1,3 +1,7 @@
+// original methodology idea from
+// stackoverflow user:16448958 Yana Dior
+//https://stackoverflow.com/questions/71633864/how-to-read-json-file-in-dart-console-app/72559734#72559734
+
 import 'dart:io';
 import 'dart:convert';
 

@@ -3,7 +3,7 @@ import 'dart:convert';
 
 const String HERDJSONFILE = "herd.json";
 
-class GOAT {
+class ANIMAL {
   int? id;
   String? name;
   String? dob;
@@ -12,7 +12,8 @@ class GOAT {
   String? notes;
 
   //{ } - implies named arguments
-  GOAT({this.id, this.name, this.dob, this.weight, this.vaccines, this.notes});
+  ANIMAL(
+      {this.id, this.name, this.dob, this.weight, this.vaccines, this.notes});
 
   @override
   String toString() {
@@ -21,7 +22,7 @@ class GOAT {
 }
 
 void main() {
-  List<GOAT>? extractedGoats;
+  List<ANIMAL>? extractedAnimal;
   //read file contents
   var herdFileString = File(HERDJSONFILE).readAsStringSync();
   //print("\njson string from file read ${herdFileString}\n");
@@ -40,15 +41,15 @@ void main() {
   //print("\herd nmap values first ${jsonmap.values.first}\n");
 
   //DataModel - key = "herd1", value = "ARRAY of Objects"
-  String herdToExtract = "herd2";
+  String herdToExtract = "jsonObject0";
   print("\nextracting herd: ${herdToExtract}\n");
   var herdValues = jsonmap[herdToExtract];
-  //print("\nherd1 maps pulled from jsonmap ${herdValues}\n");
+  print("\nherd maps pulled from jsonmap ${herdValues}\n");
   if (herdValues != null) {
-    extractedGoats = <GOAT>[];
+    extractedAnimal = <ANIMAL>[];
     //Each item in value is of type::: _InternalLinkedHashMap<String, dynamic>
     herdValues.forEach((item) {
-      extractedGoats?.add(new GOAT(
+      extractedAnimal?.add(new ANIMAL(
         id: item["id"],
         name: item["name"],
         dob: item["dob"],
@@ -56,15 +57,15 @@ void main() {
         vaccines: item["vaccines"],
         notes: item["notes"],
       ));
-      //print("Goat Info: ${item}");
+      //print("Animal Info: ${item}");
     });
   }
-  //extractedGoats?.forEach((element) => print(element));
-  //print("\nextractedGoats ${extractedGoats}");
-  print("\nextracted ${extractedGoats?.length} goats");
-  //print("\nMap 0 Goat 0 ${extractedGoats?[0]}\n");
-  //print("\nMap 1 Goat 1 ${extractedGoats?[1]}\n");
-  extractedGoats?.forEach((item) {
-    print("Goat Info: ${item}");
+  //extractedAnimal?.forEach((element) => print(element));
+  //print("\nextractedAnimal ${extractedAnimal}");
+  print("\nextracted ${extractedAnimal?.length} animals");
+  //print("\nMap 0 Animal 0 ${extractedAnimal?[0]}\n");
+  //print("\nMap 1 Animal 1 ${extractedAnimal?[1]}\n");
+  extractedAnimal?.forEach((item) {
+    print("Animal Info: ${item}");
   });
 }

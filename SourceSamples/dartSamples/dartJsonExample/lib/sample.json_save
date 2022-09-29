@@ -1,20 +1,40 @@
 {
-    "jsonObject0": [
-        {
-            "objectKeyId": 0,
-            "objectKeyText": "text"
-        }
-    ],
     "jsonObject1": [
         {
-            "objectKeyId": 1,
-            "objectKeyText": "text1"
+            "mapKey1_1": 0,
+            "mapKey2_1": "text_1_0"
         }
     ],
     "jsonObject2": [
         {
-            "objectKeyId": 2,
-            "objectKeyText": "text2"
+            "mapKey1_2": 0,
+            "mapKey2_2": "text2_0",
+            "mapKey3_2": "moreText2_0"
+        },
+        {
+            "mapKey1_2": 1,
+            "mapKey2_2": "text2_1",
+            "mapKey3_2": "moreText2_1"
+        }
+    ],
+    "jsonObject3": [
+        {
+            "mapKey1_3": 0,
+            "mapKey2_3": "text3_0",
+            "mapKey3_3": "moreTest3_0",
+            "mapKey4_3": "someMoreText3_0"
+        },
+        {
+            "mapKey1_3": 1,
+            "mapKey2_3": "text3_1",
+            "mapKey3_3": "moreTest3_1",
+            "mapKey4_3": "someMoreText3_1"
+        },
+        {
+            "mapKey1_3": 2,
+            "mapKey2_3": "text3_2",
+            "mapKey3_3": "moreTest3_2",
+            "mapKey4_3": "someMoreText3_2"
         }
     ]
 }
