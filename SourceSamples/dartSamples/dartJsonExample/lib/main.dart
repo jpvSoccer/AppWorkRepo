@@ -4,7 +4,7 @@
 
 import 'dart:io';
 import 'dart:convert';
-import 'jsonModels/jsonObjectModels.dart';
+//import 'jsonModels/jsonObjectModels.dart';
 
 const String JSONOBJECTSFILE = "sample.json";
 
@@ -19,58 +19,75 @@ void main() {
 
   // decode json string into Maps
   final Map<String, dynamic> decodedJsonFileData = jsonDecode(jsonFileString);
-  //printJsonObjectsDebugger(decodedJsonFileData);
+//  printJsonObjectsDebugger(decodedJsonFileData);
 
   // extract all relevant objects
   //// sample json has three objects that can be extracted
   //   jsonObject1, jsonObject2, jsonObject3
-  var extractedObject1 = decodedJsonFileData["jsonObject1"];
-  var extractedObject2 = decodedJsonFileData["jsonObject2"];
-  var extractedObject3 = decodedJsonFileData["jsonObject3"];
+  dynamic extractedObject1 = decodedJsonFileData["jsonObject1"];
+  dynamic extractedObject2 = decodedJsonFileData["jsonObject2"];
+  dynamic extractedObject3 = decodedJsonFileData["jsonObject3"];
   //printExtractedObjectsToManipulateDebugger(
   //    extractedObject1, extractedObject2, extractedObject3);
 
-  List<JSONOBJECTMODEL1>? formattedObject1;
+  //List<JSONOBJECTMODEL1>? formattedObject1;
   if (extractedObject1 != null) {
-    formattedObject1 = <JSONOBJECTMODEL1>[];
+//    formattedObject1 = <JSONOBJECTMODEL1>[];
     extractedObject1.forEach((item) {
-      formattedObject1?.add(new JSONOBJECTMODEL1(
-          mapKey1_1: item["mapKey1_1"], mapKey2_1: item["mapKey2_1"]));
-      //print("Formatted JsonObject Item Info: ${item}");
+      //    print("\nExtracted Object Item: ${item}");
+      print("keys: ${item.keys}");
+      print("values: ${item.values}");
+      print("mapKey1_1 value: ${item["mapKey1_1"]}");
+      print("mapKey2_1 value: ${item["mapKey2_1"]}\n");
+      //formattedObject1?.add(new JSONOBJECTMODEL1(
+      //    value1_1: item["mapKey1_1"], value2_1: item["mapKey2_1"]));
     });
   }
   //printExtractedObjectDebugger(formattedObject1);
 
-  List<JSONOBJECTMODEL2>? formattedObject2;
+  // List<JSONOBJECTMODEL2>? formattedObject2;
   if (extractedObject2 != null) {
-    formattedObject2 = <JSONOBJECTMODEL2>[];
+    //   formattedObject2 = <JSONOBJECTMODEL2>[];
     extractedObject2.forEach((item) {
-      formattedObject2?.add(new JSONOBJECTMODEL2(
-          mapKey1_2: item["mapKey1_2"],
-          mapKey2_2: item["mapKey2_2"],
-          mapKey3_2: item["mapKey3_2"]));
+      //     print("\nExtracted Object Item: ${item}");
+      print("keys: ${item.keys}");
+      print("values: ${item.values}");
+      print("mapKey1_2 value: ${item["mapKey1_2"]}");
+      print("mapKey2_2 value: ${item["mapKey2_2"]}");
+      print("mapKey3_2 value: ${item["mapKey3_2"]}\n");
+      //formattedObject2?.add(new JSONOBJECTMODEL2(
+      //    value1_2: item["mapKey1_2"],
+      //    value2_2: item["mapKey2_2"],
+      //    value3_2: item["mapKey3_2"]));
       //print("Formatted JsonObject Item Info: ${item}");
     });
   }
   //printExtractedObjectDebugger(formattedObject2);
 
-  List<JSONOBJECTMODEL3>? formattedObject3;
+//  List<JSONOBJECTMODEL3>? formattedObject3;
   if (extractedObject3 != null) {
-    formattedObject3 = <JSONOBJECTMODEL3>[];
+    //   formattedObject3 = <JSONOBJECTMODEL3>[];
     extractedObject3.forEach((item) {
-      formattedObject3?.add(new JSONOBJECTMODEL3(
-          mapKey1_3: item["mapKey1_3"],
-          mapKey2_3: item["mapKey2_3"],
-          mapKey3_3: item["mapKey3_3"],
-          mapKey4_3: item["mapKey4_3"]));
+//      print("\nExtracted Object Item: ${item}");
+      print("keys: ${item.keys}");
+      print("values: ${item.values}");
+      print("mapKey1_3 value: ${item["mapKey1_3"]}");
+      print("mapKey2_3 value: ${item["mapKey2_3"]}");
+      print("mapKey3_3 value: ${item["mapKey3_3"]}");
+      print("mapKey4_3 value: ${item["mapKey4_3"]}\n");
+      //formattedObject3?.add(new JSONOBJECTMODEL3(
+      //    value1_3: item["mapKey1_3"],
+      //    value2_3: item["mapKey2_3"],
+      //    value3_3: item["mapKey3_3"],
+      //    value4_3: item["mapKey4_3"]));
       //print("Formatted JsonObject Item Info: ${item}");
     });
   }
   //printExtractedObjectDebugger(formattedObject2);
 
-  formattedObject1?.forEach((item) => print("JsonObject 1 Info: ${item}"));
-  formattedObject2?.forEach((item) => print("JsonObject 2 Info: ${item}"));
-  formattedObject3?.forEach((item) => print("JsonObject 3 Info: ${item}"));
+  //formattedObject1?.forEach((item) => print("JsonObject 1 Info: ${item}"));
+  //formattedObject2?.forEach((item) => print("JsonObject 2 Info: ${item}"));
+  //formattedObject3?.forEach((item) => print("JsonObject 3 Info: ${item}"));
 }
 
 printJsonFileStringDebugger(jsonFileString) {
