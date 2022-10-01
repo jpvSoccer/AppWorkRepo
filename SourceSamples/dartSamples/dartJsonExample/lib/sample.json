@@ -1,40 +1,40 @@
 {
     "jsonObject1": [
         {
-            "mapKey1_1": 0,
-            "mapKey2_1": "text_1_0"
+            "mapKey1": 0,
+            "mapKey2": "value0"
         }
     ],
     "jsonObject2": [
         {
-            "mapKey1_2": 0,
-            "mapKey2_2": "text2_0",
-            "mapKey3_2": "moreText2_0"
+            "mapKey1": 1,
+            "mapKey2": "value1",
+            "mapKey3": "value2"
         },
         {
-            "mapKey1_2": 1,
-            "mapKey2_2": "text2_1",
-            "mapKey3_2": "moreText2_1"
+            "mapKey1": 2,
+            "mapKey2": "value3",
+            "mapKey3": "value4"
         }
     ],
     "jsonObject3": [
         {
-            "mapKey1_3": 0,
-            "mapKey2_3": "text3_0",
-            "mapKey3_3": "moreTest3_0",
-            "mapKey4_3": "someMoreText3_0"
+            "mapKey1": 3,
+            "mapKey2": "value5",
+            "mapKey3": "value6",
+            "mapKey4": "value7"
         },
         {
-            "mapKey1_3": 1,
-            "mapKey2_3": "text3_1",
-            "mapKey3_3": "moreTest3_1",
-            "mapKey4_3": "someMoreText3_1"
+            "mapKey1": 4,
+            "mapKey2": "value8",
+            "mapKey3": "value9",
+            "mapKey4": "value10"
         },
         {
-            "mapKey1_3": 2,
-            "mapKey2_3": "text3_2",
-            "mapKey3_3": "moreTest3_2",
-            "mapKey4_3": "someMoreText3_2"
+            "mapKey1": 5,
+            "mapKey2": "value11",
+            "mapKey3": "value12",
+            "mapKey4": "value13"
         }
     ]
 }

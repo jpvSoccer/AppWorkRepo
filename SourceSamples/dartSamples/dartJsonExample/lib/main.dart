@@ -37,10 +37,10 @@ void main() {
       //    print("\nExtracted Object Item: ${item}");
       print("keys: ${item.keys}");
       print("values: ${item.values}");
-      print("mapKey1_1 value: ${item["mapKey1_1"]}");
-      print("mapKey2_1 value: ${item["mapKey2_1"]}\n");
+      print("mapKey1 value: ${item["mapKey1"]}");
+      print("mapKey2 value: ${item["mapKey2"]}\n");
       //formattedObject1?.add(new JSONOBJECTMODEL1(
-      //    value1_1: item["mapKey1_1"], value2_1: item["mapKey2_1"]));
+      //    value1: item["mapKey1"], value2: item["mapKey2"]));
     });
   }
   //printExtractedObjectDebugger(formattedObject1);
@@ -52,13 +52,13 @@ void main() {
       //     print("\nExtracted Object Item: ${item}");
       print("keys: ${item.keys}");
       print("values: ${item.values}");
-      print("mapKey1_2 value: ${item["mapKey1_2"]}");
-      print("mapKey2_2 value: ${item["mapKey2_2"]}");
-      print("mapKey3_2 value: ${item["mapKey3_2"]}\n");
+      print("mapKey1 value: ${item["mapKey1"]}");
+      print("mapKey2 value: ${item["mapKey2"]}");
+      print("mapKey3 value: ${item["mapKey3"]}\n");
       //formattedObject2?.add(new JSONOBJECTMODEL2(
-      //    value1_2: item["mapKey1_2"],
-      //    value2_2: item["mapKey2_2"],
-      //    value3_2: item["mapKey3_2"]));
+      //    value1: item["mapKey1"],
+      //    value2: item["mapKey2"],
+      //    value3: item["mapKey3"]));
       //print("Formatted JsonObject Item Info: ${item}");
     });
   }
@@ -71,15 +71,15 @@ void main() {
 //      print("\nExtracted Object Item: ${item}");
       print("keys: ${item.keys}");
       print("values: ${item.values}");
-      print("mapKey1_3 value: ${item["mapKey1_3"]}");
-      print("mapKey2_3 value: ${item["mapKey2_3"]}");
-      print("mapKey3_3 value: ${item["mapKey3_3"]}");
-      print("mapKey4_3 value: ${item["mapKey4_3"]}\n");
+      print("mapKey1 value: ${item["mapKey1"]}");
+      print("mapKey2 value: ${item["mapKey2"]}");
+      print("mapKey3 value: ${item["mapKey3"]}");
+      print("mapKey4 value: ${item["mapKey4"]}\n");
       //formattedObject3?.add(new JSONOBJECTMODEL3(
-      //    value1_3: item["mapKey1_3"],
-      //    value2_3: item["mapKey2_3"],
-      //    value3_3: item["mapKey3_3"],
-      //    value4_3: item["mapKey4_3"]));
+      //    value1: item["mapKey1"],
+      //    value2: item["mapKey2"],
+      //    value3: item["mapKey3"],
+      //    value4: item["mapKey4"]));
       //print("Formatted JsonObject Item Info: ${item}");
     });
   }
