@@ -1,0 +1,22 @@
+{
+    "jsonObject1": [
+        {
+            "mapKey1": 0,
+            "mapKey2": "value1",
+            "mapKey3": "value2",
+            "mapKey4": "value3"
+        },
+        {
+            "mapKey1": 1,
+            "mapKey2": "value4",
+            "mapKey3": "value5",
+            "mapKey4": "value6"
+        },
+        {
+            "mapKey1": 2,
+            "mapKey2": "value7",
+            "mapKey3": "value8",
+            "mapKey4": "value9"
+        }
+    ]
+}

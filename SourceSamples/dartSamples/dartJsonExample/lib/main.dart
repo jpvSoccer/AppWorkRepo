@@ -1,134 +1,125 @@
 // original methodology idea came from
 // stackoverflow user:16448958 Yana Dior
 //https://stackoverflow.com/questions/71633864/how-to-read-json-file-in-dart-console-app/72559734#72559734
+//after analysis i determined that there was no need to a MODEL
+// all the necessary data is there after jsonDecode
 
+import 'dart:ffi';
 import 'dart:io';
 import 'dart:convert';
-//import 'jsonModels/jsonObjectModels.dart';
+import 'dart:math';
+import 'debugPrintMethods/debugPrintMethods.dart';
 
-const String JSONOBJECTSFILE = "sample.json";
+const String JSONOBJECTSFILE = "sample_3_objects.json";
 
 /// This code will show how to access and decode a JSON
-/// file that has 3 objects with a different number of items in each
+/// file that has 1 or 3 objects with a different number of maps in each
 ///
 
 void main() {
-  // read json file into string`
+  // read json file into string
+  // the json file has named objects that contain
+  // a list of one or more maps
   var jsonFileString = File(JSONOBJECTSFILE).readAsStringSync();
   //printJsonFileStringDebugger(jsonFileString);
 
   // decode json string into Maps
-  final Map<String, dynamic> decodedJsonFileData = jsonDecode(jsonFileString);
-//  printJsonObjectsDebugger(decodedJsonFileData);
+  dynamic decodedJsonFileData = jsonDecode(jsonFileString);
+  //print("decoded json objects ${decodedJsonFileData.keys}");
+  //decodedJsonFileData.keys.forEach((item) {
+  //  print("found object: ${item}");
+  //});
+  //printJsonObjectsDebugger(decodedJsonFileData);
 
-  // extract all relevant objects
-  //// sample json has three objects that can be extracted
-  //   jsonObject1, jsonObject2, jsonObject3
-  dynamic extractedObject1 = decodedJsonFileData["jsonObject1"];
-  dynamic extractedObject2 = decodedJsonFileData["jsonObject2"];
-  dynamic extractedObject3 = decodedJsonFileData["jsonObject3"];
-  //printExtractedObjectsToManipulateDebugger(
-  //    extractedObject1, extractedObject2, extractedObject3);
-
-  //List<JSONOBJECTMODEL1>? formattedObject1;
-  if (extractedObject1 != null) {
-//    formattedObject1 = <JSONOBJECTMODEL1>[];
-    extractedObject1.forEach((item) {
-      //    print("\nExtracted Object Item: ${item}");
-      print("keys: ${item.keys}");
-      print("values: ${item.values}");
-      print("mapKey1 value: ${item["mapKey1"]}");
-      print("mapKey2 value: ${item["mapKey2"]}\n");
-      //formattedObject1?.add(new JSONOBJECTMODEL1(
-      //    value1: item["mapKey1"], value2: item["mapKey2"]));
-    });
+  // list will contain all first level objects found in json file
+  List objectList = [];
+  for (var objectKey in decodedJsonFileData.keys) {
+    objectList.add(objectKey);
   }
-  //printExtractedObjectDebugger(formattedObject1);
+  print("objectList: $objectList");
+  //objectList.insert(3, "myNewObject");
+  //print("objectList0: ${objectList.elementAt(0)}");
 
-  // List<JSONOBJECTMODEL2>? formattedObject2;
-  if (extractedObject2 != null) {
-    //   formattedObject2 = <JSONOBJECTMODEL2>[];
-    extractedObject2.forEach((item) {
-      //     print("\nExtracted Object Item: ${item}");
-      print("keys: ${item.keys}");
-      print("values: ${item.values}");
-      print("mapKey1 value: ${item["mapKey1"]}");
-      print("mapKey2 value: ${item["mapKey2"]}");
-      print("mapKey3 value: ${item["mapKey3"]}\n");
-      //formattedObject2?.add(new JSONOBJECTMODEL2(
-      //    value1: item["mapKey1"],
-      //    value2: item["mapKey2"],
-      //    value3: item["mapKey3"]));
-      //print("Formatted JsonObject Item Info: ${item}");
-    });
+  //iterate through the json object list
+  // and extract the associated maps for each object
+  int objectCount = 0;
+  for (String listOfMaps in objectList) {
+    ++objectCount;
+    if (objectCount == 1) {
+      List<dynamic> extractedMap1 = decodedJsonFileData[listOfMaps];
+      print("$listOfMaps $extractedMap1");
+      extractedMap1
+          .forEach((item) => print("Extracted map from $listOfMaps $item"));
+    }
+    if (objectCount == 2) {
+      List<dynamic> extractedMap2 = decodedJsonFileData[listOfMaps];
+      print("$listOfMaps $extractedMap2");
+      extractedMap2
+          .forEach((item) => print("Extracted map from $listOfMaps $item"));
+    }
+    ;
+    if (objectCount == 3) {
+      List<dynamic> extractedMap3 = decodedJsonFileData[listOfMaps];
+      print("$listOfMaps $extractedMap3");
+      extractedMap3
+          .forEach((item) => print("Extracted map from $listOfMaps $item"));
+    }
+    ;
+    if (objectCount == 4) {
+      print(
+          "WARNING: there is no 4th json object by the name of ${objectList.elementAt(objectCount - 1)}");
+    }
+    ;
   }
-  //printExtractedObjectDebugger(formattedObject2);
-
-//  List<JSONOBJECTMODEL3>? formattedObject3;
-  if (extractedObject3 != null) {
-    //   formattedObject3 = <JSONOBJECTMODEL3>[];
-    extractedObject3.forEach((item) {
-//      print("\nExtracted Object Item: ${item}");
-      print("keys: ${item.keys}");
-      print("values: ${item.values}");
-      print("mapKey1 value: ${item["mapKey1"]}");
-      print("mapKey2 value: ${item["mapKey2"]}");
-      print("mapKey3 value: ${item["mapKey3"]}");
-      print("mapKey4 value: ${item["mapKey4"]}\n");
-      //formattedObject3?.add(new JSONOBJECTMODEL3(
-      //    value1: item["mapKey1"],
-      //    value2: item["mapKey2"],
-      //    value3: item["mapKey3"],
-      //    value4: item["mapKey4"]));
-      //print("Formatted JsonObject Item Info: ${item}");
-    });
-  }
-  //printExtractedObjectDebugger(formattedObject2);
-
-  //formattedObject1?.forEach((item) => print("JsonObject 1 Info: ${item}"));
-  //formattedObject2?.forEach((item) => print("JsonObject 2 Info: ${item}"));
-  //formattedObject3?.forEach((item) => print("JsonObject 3 Info: ${item}"));
-}
-
-printJsonFileStringDebugger(jsonFileString) {
-  print("\nStart Json String Debug Printing");
-  print("------------------------------------\n");
-  print("read string length ${jsonFileString.length}");
-  print("string created from json file read ${jsonFileString}");
-  print("Stop Json String Debug Printing");
-  print("------------------------------------\n");
-}
-
-printJsonObjectsDebugger(decodedJsonFileData) {
-  print("\nStart Json Objects Debug Printing");
-  print("------------------------------------\n");
-  print("number of json objects found ${decodedJsonFileData.length}");
-  print("decoded json objects ${decodedJsonFileData.keys}");
-  print("maps for json objects ${decodedJsonFileData.values}");
-  print(
-      "all objects and their maps after decoding json string ${decodedJsonFileData}");
-  print("json map entries ${decodedJsonFileData.entries}");
-  print("first json object decoded ${decodedJsonFileData.keys.first}");
-  print("map for first json object ${decodedJsonFileData.values.first}");
-  print("Stop Json Objects Debug Printing");
-  print("------------------------------------\n");
-}
-
-printExtractedObjectsToManipulateDebugger(
-    extractedObject1, extractedObject2, extractedObject3) {
-  print("object map pulled from jsonObject1 ${extractedObject1}");
-  print("object map pulled from jsonObject2 ${extractedObject2}");
-  print("object map pulled from jsonObject3 ${extractedObject3}");
-}
-
-printExtractedObjectDebugger(formattedObject1) {
-  print("\nStart Extracted Object Debug Printing");
-  print("------------------------------------\n");
-  formattedObject1?.forEach((element) => print(element));
-  print("\nformattedObject1 ${formattedObject1}");
-  print("\nextracted ${formattedObject1?.length} objects");
-  print("\nMap 0 JsonObject 0 ${formattedObject1?[0]}");
-  //print("\nMap 1 JsonObject 1 ${formattedObject1?[1]}");
-  print("\nStop Extracted Object Debug Printing");
-  print("------------------------------------\n");
+  exit(0);
+//JPV  // extract all relevant objects
+//JPV  //// sample json has three objects that can be extracted
+//JPV  //   listOfMaps1, listOfMaps2, listOfMaps3
+//JPV//  dynamic extractedMap1 = decodedJsonFileData["listOfMaps1"];
+//JPV  dynamic extractedMap2 = decodedJsonFileData["listOfMaps2"];
+//JPV  dynamic extractedMap3 = decodedJsonFileData["listOfMaps3"];
+//JPV  //printExtractedObjectsToManipulateDebugger(
+//JPV  //    extractedMap1, extractedMap2, extractedMap3);
+//JPV
+//JPV  int mapCount = 0;
+//JPV  if (extractedMap1 != null) {
+//JPV    extractedMap1.forEach((item) {
+//JPV      //print(decodedJsonFileData.keys.first);
+//JPV      ++mapCount;
+//JPV      //print("\nExtracted Object Item: ${item}");
+//JPV//      print("${item}  map ${mapCount} keys: ${item.keys}");
+//JPV//      print("$item  map ${mapCount} values: ${item.values}");
+//JPV      //print("mapKey1 value: ${item["mapKey1"]}");
+//JPV      //print("mapKey2 value: ${item["mapKey2"]}\n");
+//JPV    });
+//JPV  }
+//JPV  //printExtractedObjectDebugger(formattedObject1);
+//JPV  mapCount = 0;
+//JPV  if (extractedMap2 != null) {
+//JPV    ++mapCount;
+//JPV    extractedMap2.forEach((item) {
+//JPV      //     print("\nExtracted Object Item: ${item}");
+//JPV      print("$item  map ${mapCount} keys: ${item.keys}");
+//JPV      print("$item  map ${mapCount} values: ${item.values}");
+//JPV      //print("mapKey1 value: ${item["mapKey1"]}");
+//JPV      //print("mapKey2 value: ${item["mapKey2"]}");
+//JPV      //print("mapKey3 value: ${item["mapKey3"]}\n");
+//JPV    });
+//JPV  }
+//JPV  //printExtractedObjectDebugger(formattedObject2);
+//JPV
+//JPV  mapCount = 0;
+//JPV  if (extractedMap3 != null) {
+//JPV    ++mapCount;
+//JPV    extractedMap3.forEach((item) {
+//JPV//      print("\nExtracted Object Item: ${item}");
+//JPV      print("$item  map ${mapCount} keys: ${item.keys}");
+//JPV      print("$item  map ${mapCount} values: ${item.values}");
+//JPV      //print("mapKey1 value: ${item["mapKey1"]}");
+//JPV      //print("mapKey2 value: ${item["mapKey2"]}");
+//JPV      //print("mapKey3 value: ${item["mapKey3"]}");
+//JPV      //print("mapKey4 value: ${item["mapKey4"]}\n");
+//JPV    });
+//JPV  }
+//JPV  //printExtractedObjectDebugger(formattedObject2);
 }
