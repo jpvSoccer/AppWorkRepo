@@ -1,16 +1,4 @@
 {
-    "jsonObject0": [
-        {
-            "objectKeyId": 0,
-            "objectKeyText": "text"
-        }
-    ],
-    "jsonObject1": [
-        {
-            "objectKeyId": 1,
-            "objectKeyText": "text1"
-        }
-    ],
     "herd1": [
         {
             "id": 0,
@@ -99,24 +87,6 @@
             "weight": "40",
             "vaccines": "unk",
             "notes": "boar buck, breeding stock"
-        }
-    ],
-    "herd2": [
-        {
-            "id": 0,
-            "name": "sally",
-            "dob": "3/1/2015",
-            "weight": "60",
-            "vaccines": "unk",
-            "notes": "pigmy, doe, the mother of the mininubians"
-        },
-        {
-            "id": 1,
-            "name": "charlie",
-            "dob": "4/1/2018",
-            "weight": "175",
-            "vaccines": "unk",
-            "notes": "mininubian, wether, sire nubiam niko -- doe pigmy moma"
         }
     ]
 }

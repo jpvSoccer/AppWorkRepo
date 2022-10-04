@@ -5,7 +5,7 @@
             "name": "momma",
             "dob": "3/1/2015",
             "weight": "60",
-            "vaccines": "cdt and rabies 3/25/20",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
             "notes": "pigmy, doe, the mother of the mininubians"
         },
         {
@@ -13,7 +13,7 @@
             "name": "big boy",
             "dob": "4/1/2018",
             "weight": "175",
-            "vaccines": "cdt and rabies 3/25/20",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
             "notes": "mininubian, wether, sire nubiam niko -- doe pigmy moma"
         },
         {
@@ -21,7 +21,7 @@
             "name": "jack",
             "dob": "4/1/2018",
             "weight": "150",
-            "vaccines": "cdt and rabies 3/25/20",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
             "notes": "mininubian, wether, sire nubian niko -- doe pigmy moma"
         },
         {
@@ -29,7 +29,7 @@
             "name": "spot",
             "dob": "1/1/2019",
             "weight": "100",
-            "vaccines": "cdt and rabies 3/25/20",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
             "notes": "mininubian, wether, sire nubian niko -- doe pigmy moma"
         },
         {
@@ -37,7 +37,7 @@
             "name": "littlebit",
             "dob": "1/1/2019",
             "weight": "100",
-            "vaccines": "cdt and rabies 3/25/20",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
             "notes": "mininubian, doe, sire nubian niko -- doe pigmy moma"
         },
         {
@@ -45,7 +45,7 @@
             "name": "baby",
             "dob": "10/1/2019",
             "weight": "100",
-            "vaccines": "cdt and rabies 3/25/20",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
             "notes": "mininubian, wether, sire nubian niko -- doe pigmy moma"
         },
         {
@@ -53,7 +53,7 @@
             "name": "daisey",
             "dob": "4/1/2020",
             "weight": "30",
-            "vaccines": "cdt and rabies 3/25/20",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
             "notes": "dwarf nigerian, wether, was returned and i got him as a favor"
         },
         {
@@ -61,8 +61,8 @@
             "name": "homer",
             "dob": "3/1/2021",
             "weight": "50",
-            "vaccines": "cdt 5/25/20",
-            "notes": "boar wether, harvested fall 2021"
+            "vaccines": "cdt 4/30/2021, cdt 5/25/20",
+            "notes": "boar wether, harvested fall 11/2/2021"
         },
         {
             "id": 8,
