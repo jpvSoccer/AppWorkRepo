@@ -21,20 +21,45 @@ import 'debugPrintMethods/debugPrintMethods.dart';
 
 const String JSONOBJECTSFILE = "sample_3_objects.json";
 //const String JSONOBJECTSFILE = "sample_1_object.json";
+const int SUPPORTEDNUMBEROFOBJECTS = 3;
 
 void main() {
   // read json file into string
   String? jsonFileString = File(JSONOBJECTSFILE).readAsStringSync();
   //printJsonFileStringDebugger(jsonFileString);
 
-  // decode json string into a Map
+  // decode json string into top-level keys and maps
+  // keys go into topLevelKeysList
+  // maps go into extractedMapList0,1,2
   dynamic decodedJsonFileData = jsonDecode(jsonFileString);
   List topLevelKeysList = [];
+  int topLevelKeyCount = 0;
+  List<dynamic> extractedMapList0;
+  List<dynamic> extractedMapList1;
+  List<dynamic> extractedMapList2;
   decodedJsonFileData.keys.forEach((item) {
-    print("adding key to top level keys list $item");
+    ++topLevelKeyCount;
+    print("adding $item to top level keys list");
     topLevelKeysList.add(item);
+    if (topLevelKeyCount == 1) {
+      extractedMapList0 = decodedJsonFileData[item];
+      print("number of maps for $item is ${extractedMapList0.length}");
+    }
+    if (topLevelKeyCount == 2) {
+      extractedMapList1 = decodedJsonFileData[item];
+      print("number of maps  for $item is ${extractedMapList1.length}");
+    }
+    if (topLevelKeyCount == 3) {
+      extractedMapList2 = decodedJsonFileData[item];
+      print("number of maps  for $item is ${extractedMapList2.length}");
+    }
+    if (topLevelKeyCount > SUPPORTEDNUMBEROFOBJECTS) {
+      print("Error: top level object key count out of range!");
+      print("Contact developer to add more capacity to APP");
+    }
   });
-  decodedJsonFileData.values.forEach((item) => print("found value $item"));
+  exit(0);
+  //decodedJsonFileData.values.forEach((item) => print("found value $item"));
   //printJsonObjectsDebugger(decodedJsonFileData);
   // create a list that will contain all first level keys found in json file
   //for (var objectKey in decodedJsonFileData.keys) {
