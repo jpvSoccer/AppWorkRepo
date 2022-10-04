@@ -23,8 +23,9 @@ printJsonObjectsDebugger(decodedJsonFileData) {
   print("------------------------------------");
   print("Start Json Objects Debug Printing");
   print("number of json objects found ${decodedJsonFileData.length}");
-  print("decoded json objects ${decodedJsonFileData.keys}");
-  print("maps for json objects ${decodedJsonFileData.values}");
+  print("keys for decoded json objects ${decodedJsonFileData.keys}");
+  print(
+      "values for objects: lists of maps for json objects ${decodedJsonFileData.values}");
   print(
       "all objects and their maps after decoding json string ${decodedJsonFileData}");
   print("json map entries ${decodedJsonFileData.entries}");
