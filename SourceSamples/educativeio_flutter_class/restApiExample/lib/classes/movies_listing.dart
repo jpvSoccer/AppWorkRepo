@@ -18,9 +18,20 @@ class _MoviesListingState extends State<MoviesListing> {
 
   fetchMoviesData() async {
     var data = await MoviesProvider.getJson();
+    //keys: (page, results, total_pages, total_results)
+    //print("${data.keys} ${data.toString()}");
+    int page = data['page'];
+    int total_pages = data['total_pages'];
+    int total_results = data['total_results'];
+    print("data length ${data.length}");
+    print("data keys ${data.keys}");
+    print("page $page");
+    print("total pages $total_pages");
+    print("total results $total_results");
     setState(() {
       List<dynamic> results = data['results'];
       results.forEach((element) {
+        //print(element);
         movies.add(MovieModel.fromJson(element));
       });
 //      movies = data['results'];

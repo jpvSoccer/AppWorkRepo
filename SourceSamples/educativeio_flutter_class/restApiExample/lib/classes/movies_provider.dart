@@ -17,6 +17,7 @@ class MoviesProvider {
 //    "http://api.themoviedb.org/3/discover/movie?api_key=$apiKey&sort_by=primary_release_year=2014";
 //        "http://api.themoviedb.org/3/discover/movie?primary_release_year=2010&api_key=$apiKey&sort_by=vote_average.desc=2014";
     final apiResponse = await http.get(Uri.parse(apiEndPoint));
+    //print(apiResponse.body);
     //final apiResponse = await http.get(apiEndPoint);  //this worked in the older version of http but not the new one
     return json.decode(apiResponse.body);
   }
