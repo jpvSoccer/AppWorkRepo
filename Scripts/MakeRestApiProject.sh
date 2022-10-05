@@ -12,7 +12,7 @@ if  [ $OSTYPE = "darwin21" ] ; then
 export deviceName=macOS 
 fi
 
-echo "Creating basic upcounter sample"
+echo "Creating educative_io rest api example database"
 echo "and then linking in the project-specifc data"
 export projectDescription="jvogel educative_rest_api_example"
 export sampleName=material.Scaffold.1
@@ -64,7 +64,7 @@ echo "JPV: Replacing entitlements file to add client internet access"
 cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/DebugProfile.entitlements macos/Runner/DebugProfile.entitlements
 echo "JPV: adding local assets"
 ###cp -r ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/assets .
-###cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/pubspec.yaml .
+cp ~/engineering/AppWorkRepo/SourceSamples/educativeio_flutter_class/restApiExample/pubspec.yaml .
 
 # not applicable for a single project build
 #fi
