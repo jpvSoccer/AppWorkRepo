@@ -20,21 +20,29 @@ class _MoviesListingState extends State<MoviesListing> {
     var data = await MoviesProvider.getJson();
     //keys: (page, results, total_pages, total_results)
     //print("${data.keys} ${data.toString()}");
-    int page = data['page'];
-    int total_pages = data['total_pages'];
-    int total_results = data['total_results'];
-    print("data length ${data.length}");
-    print("data keys ${data.keys}");
-    print("page $page");
-    print("total pages $total_pages");
-    print("total results $total_results");
+    //int page = data['page'];
+    //int total_pages = data['total_pages'];
+    //int total_results = data['total_results'];
+    //print("data length ${data.length}");
+    //print("data keys ${data.keys}");
+    //print("page $page");
+    //print("total pages $total_pages");
+    //print("total results $total_results");
     setState(() {
       List<dynamic> results = data['results'];
+      Map<String, dynamic> testFirst = results.first;
+      print(testFirst);
+      print("JPV isEmpty ${testFirst.isEmpty}");
+      print("JPV isNotEmpty ${testFirst.isNotEmpty}");
+      print("JPV length ${testFirst.length}");
+      print("JPV keys\n${testFirst.keys}");
+      print("JPV values\n${testFirst.values}");
+      testFirst.forEach((key, value) {
+        print("JPV key, value >> $key $value");
+      });
       results.forEach((element) {
-        //print(element);
         movies.add(MovieModel.fromJson(element));
       });
-//      movies = data['results'];
 //
 // convert list to jason
 //List<String> names = ["John", "Krisna", "Rahul", "Maichel"];
