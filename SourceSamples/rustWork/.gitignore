@@ -1,6 +1,4 @@
 *.log
-*.exe
-work
 debug
 Cargo.lock
 Cargo.toml
