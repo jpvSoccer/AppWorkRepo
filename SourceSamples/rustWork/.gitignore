@@ -1,5 +1,4 @@
 *.log
 debug
 Cargo.lock
-Cargo.toml
 target
