@@ -1,11 +1,10 @@
-use std::{io, cmp::Ordering};
 use rand::Rng;
+use std::{cmp::Ordering, io};
 
 fn main() {
-
     let secret_number = rand::thread_rng().gen_range(1..=100);
     println!("Your secret number is {secret_number}");
-    let mut guess= String::new();
+    let mut guess = String::new();
 
     println!("\nGuess a number between 1 and 100!\n");
     println!("Please input your guess:");
@@ -25,4 +24,4 @@ fn main() {
         Ordering::Equal => println!("Your guess is correct! :)"),
         Ordering::Greater => println!("Your guess is too high"),
     }
-    }
+}
