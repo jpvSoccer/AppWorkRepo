@@ -1,1 +1,1 @@
-hello-world-gtk.c
+gtk_matthias_app.c
