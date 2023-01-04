@@ -39,14 +39,29 @@ int main(int argc, char **argv) {
     size_t n_children;
     size_t i;
 
-    system("pwd");
+    system("echo '\nNOTE: current run directory';pwd");
 
     fp = fopen("herd.json", "r");
-    fread(buffer, 1024, 1, fp) ;
-    fclose(fp);
+    if (fp == NULL) {
+	    perror("\nFailed: ");
+	    printf("Exiting");
+	    return 1;
+	} else {
+      printf("NOTE: json file opened OK\n");
+      }
 
-    printf("read file data: %s\n",buffer);
+    int charsRead;
+    charsRead = fread(buffer, 1, 1024, fp) ;
+    if (charsRead == 0) {
+	printf("\nERROR: json file read failed: exiting\n");
+	return 2;
+	} else {
+        printf("NOTE: json file read OK\n");
+        printf("\nNOTE: chars read from json file: %d\n",charsRead);
+        fclose(fp);
+      }
 
+    //parsing the buffer for json objects
     parsed_json = json_tokener_parse(buffer);
 
     json_object_object_get_ex(parsed_json, "id", &id);
@@ -56,7 +71,8 @@ int main(int argc, char **argv) {
     json_object_object_get_ex(parsed_json, "vaccines", &vaccines);
     json_object_object_get_ex(parsed_json, "notes", &notes);
     json_object_object_get_ex(parsed_json, "children", &children);
-printf("\n");
+    
+    printf("\nNOTE: showing the json data fields:\n");
     printf("Id %d\n", json_object_get_int(id));
     printf("Name %s\n", json_object_get_string(name));
     printf("dob %s\n", json_object_get_string(dob));
@@ -71,6 +87,5 @@ printf("\n");
        child = json_object_array_get_idx(children,i);
        printf("%lu, %s\n", i+1, json_object_get_string(child));
     }
-    printf("Hello, World!\n");
     return 0;
 }

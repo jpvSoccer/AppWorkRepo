@@ -4,6 +4,7 @@
 
 export SRCFILE=$1
 export OUTFILE="${SRCFILE/.c/}"
+export OUTASSEMFILE="${SRCFILE/.c/.s}"
 
 if test -f "$SRCFILE"; then
     echo "$SRCFILE exists."
@@ -16,7 +17,14 @@ if test -f "$OUTFILE"; then
     rm $OUTFILE
 fi
 
-gcc $(pkg-config --cflags json-c) -o $OUTFILE $SRCFILE $(pkg-config --libs json-c)
+if test -f "$OUTASSEMFILE"; then
+    echo "Removing old assembly file $OUTASSEMFILE"
+    rm $OUTASSEMFILE
+fi
+
+gcc -g $(pkg-config --cflags json-c) -o $OUTFILE $SRCFILE $(pkg-config --libs json-c)
+# create assembly file
+gcc -S $SRCFILE -ljson-c
 #gcc -o $OUTFILE $SRCFILE -ljson-c 
 
 echo "run this file: $OUTFILE"
