@@ -19,8 +19,8 @@ fi
 echo "sourceFile: $SRCFILE"
 echo "outFile: $OUTFILE"
 
-#gcc $(pkg-config --cflags gtk4) -o $OUTFILE $SRCFILE $(pkg-config --libs gtk4)
 gcc $(pkg-config --cflags gtk4) -o $OUTFILE $SRCFILE $(pkg-config --libs gtk4)
+
 
 
 #./$OUTILE
