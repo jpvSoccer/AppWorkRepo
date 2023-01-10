@@ -50,14 +50,14 @@ int main(int argc, char **argv) {
       printf("NOTE: json file opened OK\n");
       }
 
-    int charsRead;
-    charsRead = fread(buffer, 1, 1024, fp) ;
-    if (charsRead == 0) {
+    int numCharsRead;
+    numCharsRead = fread(buffer, 1, 1024, fp) ;
+    if (numCharsRead == 0) {
 	printf("\nERROR: json file read failed: exiting\n");
 	return 2;
 	} else {
         printf("NOTE: json file read OK\n");
-        printf("\nNOTE: chars read from json file: %d\n",charsRead);
+        printf("\nNOTE: chars read from json file: %d\n",numCharsRead);
         fclose(fp);
       }
 
