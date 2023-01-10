@@ -22,10 +22,11 @@ if test -f "$OUTASSEMFILE"; then
     rm $OUTASSEMFILE
 fi
 
-gcc -g $(pkg-config --cflags json-c) -o $OUTFILE $SRCFILE $(pkg-config --libs json-c)
+# -Wall -g >> all warnings and save data for gdb debugging
+gcc -Wall -g $(pkg-config --cflags json-c) -o $OUTFILE $SRCFILE $(pkg-config --libs json-c)
 # create assembly file
-gcc -S $SRCFILE -ljson-c
-#gcc -o $OUTFILE $SRCFILE -ljson-c 
+#gcc -S $SRCFILE -ljson-c
+#gcc -o $OUTFILE $SRCFILE -ljson-c -Wall -g
 
 echo "run this file: $OUTFILE"
 
