@@ -1,0 +1,92 @@
+{
+    "herd1": [
+        {
+            "id": 0,
+            "name": "momma",
+            "dob": "3/1/2015",
+            "weight": "60",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
+            "notes": "pigmy, doe, the mother of the mininubians"
+        },
+        {
+            "id": 1,
+            "name": "big boy",
+            "dob": "4/1/2018",
+            "weight": "175",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
+            "notes": "mininubian, wether, sire nubiam niko -- doe pigmy moma"
+        },
+        {
+            "id": 2,
+            "name": "jack",
+            "dob": "4/1/2018",
+            "weight": "150",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
+            "notes": "mininubian, wether, sire nubian niko -- doe pigmy moma"
+        },
+        {
+            "id": 3,
+            "name": "spot",
+            "dob": "1/1/2019",
+            "weight": "100",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
+            "notes": "mininubian, wether, sire nubian niko -- doe pigmy moma"
+        },
+        {
+            "id": 4,
+            "name": "littlebit",
+            "dob": "1/1/2019",
+            "weight": "100",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
+            "notes": "mininubian, doe, sire nubian niko -- doe pigmy moma"
+        },
+        {
+            "id": 5,
+            "name": "baby",
+            "dob": "10/1/2019",
+            "weight": "100",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
+            "notes": "mininubian, wether, sire nubian niko -- doe pigmy moma"
+        },
+        {
+            "id": 6,
+            "name": "daisey",
+            "dob": "4/1/2020",
+            "weight": "30",
+            "vaccines": "cdt 4/30/2021, cdt and rabies 3/25/20",
+            "notes": "dwarf nigerian, wether, was returned and i got him as a favor"
+        },
+        {
+            "id": 7,
+            "name": "homer",
+            "dob": "3/1/2021",
+            "weight": "50",
+            "vaccines": "cdt 4/30/2021, cdt 5/25/20",
+            "notes": "boar wether, harvested fall 11/2/2021"
+        },
+        {
+            "id": 8,
+            "name": "dumbledore1",
+            "dob": "8/1/2021",
+            "weight": "50",
+            "vaccines": "unk",
+            "notes": "boar wether, harvested spring 2022"
+        },
+        {
+            "id": 9,
+            "name": "dumbledore2",
+            "dob": "8/1/2021",
+            "weight": "60",
+            "vaccines": "unk",
+            "notes": "boar wether, plan to harvest fall 2022"
+        },
+        {
+            "id": 10,
+            "name": "bucky",
+            "dob": "3/1/2022",
+            "weight": "40",
+            "vaccines": "unk",
+            "notes": "boar buck, breeding stock"
+        }
+    ]
+}
