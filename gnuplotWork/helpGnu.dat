@@ -1,11 +1,14 @@
+# run from terminal
+gnuplot -e 'set term png;set output "sinx.png";p sin(x)'
+gnuplot -e 'set term pdf;set output "sinx.pdf";p sin(x)'
+
+# plot from a command script
+gnuplot -c makeSinPlot.scr
+
+# interactive plotting
+> gnuplot <cr>
 reset
 set term pdf
 set output "sinx.pdf"
 plot sin(x) with linespoints pointtype 3
-
-reset
-set term png
-set output "sinx.png"
-plot sin(x)
-
-
+quit
